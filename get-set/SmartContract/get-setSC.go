@@ -112,6 +112,7 @@ func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 
 // Get returns the value of the specified asset key
 func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+	logger.Debug("get() called.")
 	fmt.Println("- start get value")
 	if len(args) != 1 {
 		logger.Error("Incorrect number of arguments passed in get.")
