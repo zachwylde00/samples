@@ -1,35 +1,15 @@
-/**
- *  Xooa Zapier Logger Chaincode
- *
- *  Copyright 2018 Xooa
- *
- *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- *  in compliance with the License. You may obtain a copy of the License at:
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
- *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
- *  for the specific language governing permissions and limitations under the License.
- */
 /*
- * Original source via IBM Corp:
- *  https://hyperledger-fabric.readthedocs.io/en/release-1.2/chaincode4ade.html#pulling-it-all-together
+ * Copyright IBM Corp All Rights Reserved
  *
- * Modifications from: Arisht Jain:
- *  https://github.com/xooa/samples
- *
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
-	"strings"
 
-	"github.com/hyperledger/fabric/core/chaincode/lib/cid"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	"github.com/hyperledger/fabric/protos/peer"
 )
@@ -40,7 +20,6 @@ var logger = shim.NewLogger("get-setSC")
 type SimpleAsset struct {
 }
 
-// ...... checking if commit id gets updated
 // Init is called during chaincode instantiation to initialize any
 // data. Note that chaincode upgrade also calls this function to reset
 // or to migrate data.
@@ -57,24 +36,6 @@ func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 	// Extract the function and args from the transaction proposal
 	fn, args := stub.GetFunctionAndParameters()
 
-	//checking for account level access
-	channelId := stub.GetChannelID()
-	accountAssertError := cid.AssertAttributeValue(stub, "ChannelId", channelId)
-	if accountAssertError != nil {
-		return shim.Error(accountAssertError.Error())
-	}
-
-	// checking for access to app
-	chaincodeId := os.Getenv("CORE_CHAINCODE_ID_NAME")
-	pair := strings.Split(chaincodeId, ":")
-	chaincodeName := pair[0]
-	appAssertError := cid.AssertAttributeValue(stub, "AppId", chaincodeName)
-	if appAssertError != nil {
-		return shim.Error(appAssertError.Error())
-	}
-
-	fmt.Println("invoke is running " + fn)
-
 	var result string
 	var err error
 	if fn == "set" {
@@ -86,7 +47,7 @@ func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 		logger.Error("Error occured in Invoke.")
 		return shim.Error(err.Error())
 	}
-	fmt.Println("invoke returning " + result)
+
 	// Return the result as success payload
 	return shim.Success([]byte(result))
 }
@@ -95,7 +56,6 @@ func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 // it will override the value with the new one
 func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	logger.Debug("set() called.")
-	fmt.Println("- start set value")
 	if len(args) != 2 {
 		logger.Error("Incorrect number of arguments passed in set.")
 		return "", fmt.Errorf("Incorrect number of arguments. Expecting 2 arguments: " + strconv.Itoa(len(args)) + " given.")
@@ -106,16 +66,13 @@ func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		logger.Error("Error occured while calling PutState(): ", err)
 		return "", fmt.Errorf("Failed to set asset: %s", args[0])
 	}
-	fmt.Println("- end set value")
 	return args[1], nil
 }
 
 // Get returns the value of the specified asset key
 func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	logger.Debug("get() called.")
-	fmt.Println("- start get value")
 	if len(args) != 1 {
-		logger.Error("Incorrect number of arguments passed in get.")
 		return "", fmt.Errorf("Incorrect number of arguments. Expecting 1 arguments: " + strconv.Itoa(len(args)) + " given.")
 	}
 
@@ -128,7 +85,6 @@ func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		logger.Info("No data received for key : ", args[0])
 		return "", fmt.Errorf("Asset not found: %s", args[0])
 	}
-	fmt.Println("- end get value")
 	return string(value), nil
 }
 
