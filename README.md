@@ -10,9 +10,9 @@ Using Xooa, you can provide a permanent cloud end-point for a smart contract, en
 ## Deploy the smart contract
 
  
-1. Log in to Xooa using an exisitng GitHub, Google or Facebook account.
+1. Log in to Xooa using an existing GitHub, Google or Facebook account. Xooa uses only the email address of your social account.
 
-2. Go to **Apps**>**Deploy New**, if you looged in using Google or Facebook you will be prompted to connected GitHub account. This is required.
+2. Go to **Apps**>**Deploy New**, if you looged in using Google or Facebook you will be prompted to connect GitHub account. This is required.
 
 3. Search for the Github repository you want to use for deployment. For example, type **Xooa/samples** to deploy one of the sample provided by Xooa, then click **Select**, and then **Next**.
 
@@ -66,7 +66,7 @@ For example, if using this repo **get-set** smart contract to store data in bloc
  * A response code of **200** indicates successful function call of the smart contract.
  * A response code of **202** indicates that your request is queued for processing. Final processing outcome may be obtained through **Result** end point by using **resultId** obtained in **response body**.
  * A response code of **400** indicates that you have a malformed request. Check the **body** field again.
- * A response code of **401** indicates that either you forgot to enter API token you have entered invalid API token.
+ * A response code of **401** indicates that either you forgot to enter API token you have entered invalid API token. While you cannot recover lost API Key or Token you can always generate a new one from Xooa console - app dashboard - Identities tab
 Congrats! You have saved the first data in the blockchain using **Xooa**.
 
 7. To view your transaction as part of the blockchain, from your Xooa dashboard, go to **Ledger**.
