@@ -57,19 +57,21 @@ ___
 
 <img src="https://github.com/Xooa/samples/blob/master/screenshots/invoke.png" alt="HLD" width="300px"/>
 
-4. In the **body** field, enter the data in the format expected by the smart contract. 
+4. In the **fcn** field, enter the Samrt Contrac name you wish to Invoke. 
+For example, if using this repo **get-set** smart contract to store data in blockchain you should enter `set` should be entred as the **fcn** field value 
+
+5. In the **body** field, enter the data in the format expected by the smart contract. 
 For example, if using this repo **get-set** smart contract to store data in blockchain ledger using the **set** function, the body should be entered as: 
 
     `{ "args": [ "<key>", "<value>" ] }`
 
-5. Click  **try**.
+6. Click or tap  **try**.
  * A response code of **200** indicates successful function call of the smart contract.
  * A response code of **202** indicates that your request is queued for processing. Final processing outcome may be obtained through **Result** end point by using **resultId** obtained in **response body**.
- * A response code of **400** indicates that you have a malformed request. Check the **body** field again.
+ * A response code of **400** indicates that you have a malformed request. Check the **body** and **fcn** fields.
  * A response code of **401** indicates that either you forgot to enter API token you have entered invalid API token. While you cannot recover lost API Key or Token you can always generate a new one from Xooa console - app dashboard - Identities tab
-Congrats! You have saved the first data in the blockchain using **Xooa**.
 
-7. To view your transaction as part of the blockchain, from your Xooa dashboard, go to **Ledger**.
+7. To view your transaction ain the blockchain Ledger, from your Xooa dashboard, go to **Ledger**.
 
-8. Go to the **Transactions** tab.
+8.  Go to the **Transactions** tab.
 You can expand the data field to see your transactions.
