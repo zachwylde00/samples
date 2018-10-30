@@ -10,9 +10,9 @@ Using Xooa, you can provide a permanent cloud end-point for a smart contract, en
 ## Deploy the smart contract
 
  
-1. Log in to Xooa.
+1. Log in to Xooa using an exisitng GitHub, Google or Facebook account.
 
-2. Go to **Apps**>**Deploy New**.
+2. Go to **Apps**>**Deploy New**, if you looged in using Google or Facebook you will be prompted to connected GitHub account. This is required.
 
 3. Search for the Github repository you want to use for deployment. For example, type **Xooa/samples** to deploy one of the sample provided by Xooa, then click **Select**, and then **Next**.
 
@@ -22,14 +22,14 @@ Using Xooa, you can provide a permanent cloud end-point for a smart contract, en
 
 5. Relax:  Xooa is doing the blockchain heavy lifting. You will be redirected to app dashboard when the deployment completes.
 
-6.  Navigate to **Identities** tab, click **Show API Token**.
+6.  Navigate to **Identities** tab, click or tap **Add New**, enter name for Identity  and set permissions to Read+Write. Copy the **API Token** and save it in secure place. You will need when calling the APIs.
 
 7. Copy and store the **API Token** values. You need this to authorize API requests.
 
 ___
 
 
-## The Xooa dashboard 
+## The Xooa app dashboard 
 
 The dashboard consists of the following tabs:
 <dl>
