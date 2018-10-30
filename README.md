@@ -3,7 +3,7 @@ This page provides a step-by-step tutorial to deploy a sample app with Xooa's bl
 
 # Overview
 
-This repository contains the blockchain smart contract (henceforth smart contract). You will deploy the smart contract via the Xooa dashboard.
+This repository contains the blockchain smart contract (sometimes also called "chaincode"). You will deploy the smart contract via the Xooa console.
 
 Using Xooa, you can provide a permanent cloud end-point for a smart contract, enabling cloud-to-cloud integration while maintaining the peer-to-peer capabilities of blockchain.
 
@@ -22,9 +22,9 @@ Using Xooa, you can provide a permanent cloud end-point for a smart contract, en
 
 5. Relax:  Xooa is doing the blockchain heavy lifting. You will be redirected to app dashboard when the deployment completes.
 
-6.  Navigate to **Identities** tab, click or tap **Add New**, enter name for Identity  and set permissions to Read+Write. Copy the **API Token** and save it in secure place. You will need when calling the APIs.
+6.  Navigate to **Identities** tab, click or tap **Add New**, enter name for Identity  and set permissions to Read+Write. 
 
-7. Copy and store the **API Token** values. You need this to authorize API requests.
+7. Copy and store the **API Token** value. You need it to authorize API requests. API Token cannot be dispalyed after you closed the window, but it may get regenerated. 
 
 ___
 
@@ -69,7 +69,7 @@ For example, if using this repo **get-set** smart contract to store data in bloc
  * A response code of **200** indicates successful function call of the smart contract.
  * A response code of **202** indicates that your request is queued for processing. Final processing outcome may be obtained through **Result** end point by using **resultId** obtained in **response body**.
  * A response code of **400** indicates that you have a malformed request. Check the **body** and **fcn** fields.
- * A response code of **401** indicates that either you forgot to enter API token you have entered invalid API token. While you cannot recover lost API Key or Token you can always generate a new one from Xooa console - app dashboard - Identities tab
+ * A response code of **401** indicates that either you forgot to enter API Token you have entered invalid API token. While you cannot recover lost API  Token you can always generate a new one from Xooa console - app dashboard - **Identities** tab - **actions**
 
 7. To view your transaction ain the blockchain Ledger, from your Xooa dashboard, go to **Ledger**.
 
