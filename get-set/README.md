@@ -1,51 +1,33 @@
-
-This page provides a step-by-step tutorial to deploy a sample app with Xooa's blockchain-as-a-service (BaaS).
-
-The repository used in this example is <https://github.com/Xooa/samples>
-
 # Overview
 
-This repository contains the blockchain smart contract (henceforth smart contract). You will deploy the chaincode via the Xooa dashboard.
-
-Using Xooa, you can provide a permanent cloud end-point for a smart contract, enabling cloud-to-cloud integration while maintaining the peer-to-peer capabilities of blockchain.
-
-## Deploy the get-set chaincode 
-
- 
-1. Log in to Xooa.
-
-2. Navigate to **Apps**, then **Deploy New**.
-
-3. Search for **Xooa/samples**, and click **Select**, and then **Next**.
-
-4. Select **Xooa-get-set** as the Smart Contract, and then click **Deploy**.
-
-5. Relax:  Xooa is doing the blockchain heavy lifting. You will be redirected to app dashboard when the deployment completes.
-
-6.  Navigate to **Identities** tab, click **Show API Token**.
-
-7. Copy and store the **API Token** values. You need this to authorize API requests.
+This directory contains the get-set smart contract. You will deploy the smart contract via the Xooa dashboard. For a step-by-step getting started, refer to  <https://github.com/Xooa/samples/blob/master/README.md>
 
 ___
 
-## Explore the end-point for the smart Contract
 
-1. Navigate to **Details** tab, click **Explore API's**.
+1. This app will be deployed on `Hyperledger Fabric`. It is written in `GoLang`.
+
+2. While deploying the smart contract, click **Xooa Samples**. Click **Next**.
+
+3. Select **Xooa-get-set** as the smart contract.
+
+### Explore the get-set smart Contract end-points
+
+1. Navigate to **Details** tab, Click **Explore API's**.
 
 2. Enter **API Token** in the field in navigation pane.
 
 3. Navigate to **Smart Contract > Invoke Smart Contract Function** from the navigation pane.
 
-4. We will be calling **set** function from the smart contract. Type `set` in the fcn field.
+  	**Invoke** will be used for making a change to the data inside the blockchain. **set** function will be used for invoking the smart contract.
+
+  	**Query** can be used for reading the data from the blockchain only. **get** function will be used for querying the smart contract.
+
+4. Type `set` in the fcn field.
 
 5. In the **body** field, enter the data you want to store in blockchain in the following format:
 
-`{
-  "args": [
-    "<key>",
-    "<value>"
-  ]
-}`
+  	`{ "args": [ "<key>", "<value>" ] }`
 
 6. Click on **try**.
 
