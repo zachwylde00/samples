@@ -12,7 +12,7 @@ Using Xooa, you can provide a permanent cloud end-point for a smart contract, en
  
 1. Log in to Xooa using an existing GitHub, Google or Facebook account. Xooa uses only the email address of your social account.
 
-2. Go to **Apps**>**Deploy New**, if you looged in using Google or Facebook you will be prompted to connect GitHub account. This is required.
+2. Go to **Apps**>**Deploy New**, if you logged in using Google or Facebook you will be prompted to connect GitHub account. This is required.
 
 3. Search for the Github repository you want to use for deployment. For example, type **Xooa/samples** to deploy one of the sample provided by Xooa, then click **Select**, and then **Next**.
 
@@ -38,7 +38,7 @@ The dashboard consists of the following tabs:
 <dt>Identities</dt>
   <dd>Create or delete an identity. You can also specify access rights to different identities, thus controlling the access of endpoints for your smart contract</dd>
    <dt>Activities</dt>
-  <dd>History of your app's activities./dd>
+  <dd>History of your app's activities.</dd>
       <dt>Logs</dt>
  <dd>View smart contract events from the last 10 minutes.</dd>
   <dt>Manage</dt>
@@ -57,8 +57,8 @@ ___
 
 <img src="https://github.com/Xooa/samples/blob/master/screenshots/invoke.png" alt="HLD" width="300px"/>
 
-4. In the **fcn** field, enter the Samrt Contrac name you wish to Invoke. 
-For example, if using this repo **get-set** smart contract to store data in blockchain you should enter `set` should be entred as the **fcn** field value 
+4. In the **fcn** field, enter the Smart Contract function name you wish to Invoke. 
+For example, if using this repo **get-set** smart contract to store data in blockchain `set` should be entred as the **fcn** field value 
 
 5. In the **body** field, enter the data in the format expected by the smart contract. 
 For example, if using this repo **get-set** smart contract to store data in blockchain ledger using the **set** function, the body should be entered as: 
