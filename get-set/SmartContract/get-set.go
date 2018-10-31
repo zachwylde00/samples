@@ -1,6 +1,6 @@
 /*
- * Copyright IBM Corp All Rights Reserved
- *
+ * Copyright Xooa All Rights Reserved
+ * Based on get-set copyright IBM
  * SPDX-License-Identifier: Apache-2.0
  */
 
