@@ -36,56 +36,58 @@ func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 	// Extract the function and args from the transaction proposal
 	fn, args := stub.GetFunctionAndParameters()
 
-	var result string
-	var err error
 	if fn == "set" {
-		result, err = set(stub, args)
-	} else { // assume 'get' even if fn is nil
-		result, err = get(stub, args)
-	}
-	if err != nil {
-		logger.Error("Error occured in Invoke.")
-		return shim.Error(err.Error())
+		return t.set(stub, args)
+	} else if fn == "get" { // assume 'get' even if fn is nil
+		return t.get(stub, args)
 	}
 
-	// Return the result as success payload
-	return shim.Success([]byte(result))
+	logger.Error("Function declaration not found for ", fn)
+	resp := shim.Error("Invalid function name : " + fn)
+	resp.Status = 404
+	return resp
 }
 
 // Set stores the asset (both key and value) on the ledger. If the key exists,
 // it will override the value with the new one
-func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+func (t *SimpleAsset) set(stub shim.ChaincodeStubInterface, args []string) peer.Response {
 	logger.Debug("set() called.")
 	if len(args) != 2 {
 		logger.Error("Incorrect number of arguments passed in set.")
-		return "", fmt.Errorf("Incorrect number of arguments. Expecting 2 arguments: " + strconv.Itoa(len(args)) + " given.")
+		resp := shim.Error("Incorrect number of arguments. Expecting 2 arguments: " + strconv.Itoa(len(args)) + " given.")
+		resp.Status = 400
+		return resp
 	}
 
 	err := stub.PutState(args[0], []byte(args[1]))
 	if err != nil {
 		logger.Error("Error occured while calling PutState(): ", err)
-		return "", fmt.Errorf("Failed to set asset: %s", args[0])
+		return shim.Error("Failed to set asset: " + args[0])
 	}
-	return args[1], nil
+	return shim.Success([]byte(args[1]))
 }
 
 // Get returns the value of the specified asset key
-func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+func (t *SimpleAsset) get(stub shim.ChaincodeStubInterface, args []string) peer.Response {
 	logger.Debug("get() called.")
 	if len(args) != 1 {
-		return "", fmt.Errorf("Incorrect number of arguments. Expecting 1 arguments: " + strconv.Itoa(len(args)) + " given.")
+		resp := shim.Error("Incorrect number of arguments. Expecting 1 arguments: " + strconv.Itoa(len(args)) + " given.")
+		resp.Status = 400
+		return resp
 	}
 
 	value, err := stub.GetState(args[0])
 	if err != nil {
 		logger.Error("Error occured while calling GetState(): ", err)
-		return "", fmt.Errorf("Failed to get asset: %s with error: %s", args[0], err)
+		return shim.Error("Failed to get asset: " + args[0])
 	}
 	if value == nil {
 		logger.Info("No data received for key : ", args[0])
-		return "", fmt.Errorf("Asset not found: %s", args[0])
+		resp := shim.Error("Asset not found: " + args[0])
+		resp.Status = 400
+		return resp
 	}
-	return string(value), nil
+	return shim.Success(value)
 }
 
 // main function starts up the chaincode in the container during instantiate
