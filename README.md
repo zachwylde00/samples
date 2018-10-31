@@ -51,7 +51,7 @@ ___
 
 1. Go to the **Details** tab, click **Explore API's**.
 
-2. Enter **API Token** in the field in navigation pane.
+2. Enter **API Token** in the field in navigation pane. This is used to authenticate all API calls.
 
 3. Go to the **Smart Contract > Invoke Smart Contract Function** from the navigation pane.
 
