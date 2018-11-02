@@ -63,7 +63,7 @@ For example, if using this repo **get-set** smart contract to store data in bloc
 5. In the **body** field, enter the data in the format expected by the smart contract. 
 For example, if using this repo **get-set** smart contract to store data in blockchain ledger using the **set** function, the body should be entered as: 
 
-    `{ "args": [ "<key>", "<value>" ] }`
+    `[ "<key>", "<value>" ]`
 
 6. Click or tap  **try**.
  * A response code of **200** indicates successful function call of the smart contract.

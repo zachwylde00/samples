@@ -27,11 +27,11 @@ ___
 
 5. In the **body** field, enter the data you want to store in blockchain in the following format:
 
-  	`{ "args": [ "<key>", "<value>" ] }`
+  	`[ "<key>", "<value>" ]`
 
 6. Click on **try**.
 
-7. Congrats! You have saved the first data in the blockchain using **XOOA**.
+7. Congrats! You have saved the first data in the blockchain using **Xooa**.
 
 8. To view your transaction as part of the blockchain, navigate to **Ledger** from your Xooa dashboard.
 
