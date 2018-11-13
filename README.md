@@ -16,15 +16,13 @@ Using Xooa, you can provide a permanent cloud end-point for a smart contract, en
 
 3. Search for the Github repository you want to use for deployment. For example, type **Xooa/samples** to deploy one of the sample provided by Xooa, then click **Select**, and then **Next**.
 
-<img src="https://github.com/Xooa/samples/blob/master/screenshots/deploy.png" alt="deploy" width="500px"/>
+<img src="https://github.com/Xooa/samples/blob/master/images/deploy.png" alt="deploy" width="500px"/>
 
 4. Select the Smart Contract you want to deploy, and then click **Deploy**.
 
 5. Relax:  Xooa is doing the blockchain heavy lifting. You will be redirected to app dashboard when the deployment completes.
 
-6.  Navigate to **Identities** tab, click or tap **Add New**, enter name for Identity  and set permissions to Read+Write. 
-
-7. Copy and store the **API Token** value. You need it to authorize API requests. API Token cannot be dispalyed after you closed the window, but it may get regenerated. 
+6. Copy and save the **API Token** shown in the prompt. You will require this to authorize API requests to the Xooa app. You can also regenerate token from the **Identities** tab.
 
 ___
 
@@ -55,7 +53,7 @@ ___
 
 3. Go to the **Smart Contract > Invoke Smart Contract Function** from the navigation pane.
 
-<img src="https://github.com/Xooa/samples/blob/master/screenshots/invoke.png" alt="Invoke" width="300px"/>
+<img src="https://github.com/Xooa/samples/blob/master/images/invoke.png" alt="Invoke" width="300px"/>
 
 4. In the **fcn** field, enter the Smart Contract function name you wish to Invoke. 
 For example, if using this repo **get-set** smart contract to store data in blockchain `set` should be entred as the **fcn** field value 

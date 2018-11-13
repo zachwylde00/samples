@@ -22,9 +22,7 @@ Using Xooa, provide a permanent cloud end-point for a SmartThings app, enable cl
 
 5. Relax:  Xooa is doing the blockchain heavy lifting. You'll be redirected to app dashboard when the deployment completes.
 
-6. Copy and store the **API Token** shown in the prompt. You will require this to make API calls to the Xooa app. You can also regenerate token from the **Identities** tab.
-
-7. Copy and store the **API Token** values. You need these to authorize API requests in your **SmartApp**.
+6. Copy and save the **API Token** shown in the prompt. You will require this to authorize API requests to the Xooa app. You can also regenerate token from the **Identities** tab.
 
 ___
 

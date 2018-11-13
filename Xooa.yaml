@@ -17,3 +17,9 @@ Apps:
     path: /get-set/SmartContract
     language: go
     README: https://github.com/Xooa/samples/blob/master/get-set/README.md
+  Xooa-smartThings:
+    Name: SmartThings Integration
+    Description: Xooa SmartThings Smart Contract
+    path: /smartThings/SmartContract/
+    language: go
+    README: https://github.com/Xooa/samples/blob/master/smartThings/README.md
