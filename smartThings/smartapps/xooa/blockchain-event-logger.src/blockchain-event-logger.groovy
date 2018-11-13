@@ -17,7 +17,7 @@
  *  https://raw.githubusercontent.com/bkeifer/smartthings/master/Logstash%20Event%20Logger/LogstashEventLogger.groovy
  *
  * Modifications from: Arisht Jain:
- *  https://github.com/xooa/integrations
+ *  https://github.com/xooa/samples
  *
  * Changes:
  *  Logs to Xooa blockchain platform instead of Logstash

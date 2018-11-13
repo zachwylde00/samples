@@ -14,7 +14,7 @@
  */
  /*
  * Original source from Arisht Jain:
- *  https://github.com/xooa/integrations
+ *  https://github.com/xooa/samples
  *
  */
 

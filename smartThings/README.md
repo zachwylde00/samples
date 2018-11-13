@@ -1,7 +1,7 @@
 
 This page provides a step-by-step tutorial to integrate a blockchain SmartApp with Xooa's blockchain-as-a-service (BaaS).
 
-The repository used in this example is <https://github.com/Xooa/integrations>
+The repository used in this example is <https://github.com/Xooa/samples>
 
 # Overview
 
@@ -38,7 +38,7 @@ You now need to publish the app.  You can do this with or without GitHub integra
 
 1. Click **New SmartApp**.
 
-2. Copy the *groovy* script from the smartThings folder of the  **integrations** repo: <https://raw.githubusercontent.com/Xooa/integrations/master/smartThings/blockchain-event-logger.groovy>
+2. Copy the *groovy* script from the smartThings folder of the  **samples** repo: <https://raw.githubusercontent.com/Xooa/samples/master/smartThings/blockchain-event-logger.groovy>
     
 3. On the **From code** tab, paste the code.
 
@@ -52,11 +52,11 @@ You now need to publish the app.  You can do this with or without GitHub integra
 2. Click **Add new repository**.
 3.  Add the GitHub repo to your IDE with the following parameters:
     * `Owner`: xooa
-    * `Name`: integrations
+    * `Name`: samples
     * `Branch`: master
 4. Click **Save**.
 5. Click **Update from Repo**.
-6. Click **integrations (master)**.
+6. Click **samples (master)**.
 7. Select **blockchain-event-logger.groovy** from the **New (only in GitHub)** column.
 8.  Select **Publish**.
 9.  Click  **Execute Update**.
@@ -112,7 +112,7 @@ Before you begin, ensure that you:
 
 Follow the same steps as `Event Logger SmartApp Setup (SmartThings IDE)` but:
 
-1. Use `blockchain-event-viewer.groovy` instead of `blockchain-event-logger.groovy` from **integrations** GitHub repo.
+1. Use `blockchain-event-viewer.groovy` instead of `blockchain-event-logger.groovy` from **samples** GitHub repo.
 
 2. Skip `Event Logger SmartApp Configuration` steps.
 
