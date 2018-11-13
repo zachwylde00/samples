@@ -151,7 +151,7 @@ def genericHandler(evt) {
     log.debug("unit: ${evt.unit}")
 
    */ 
-    def json = "{\"args\":["
+    def json = "["
     json += "\"${evt.displayName}\","
     json += "\"${evt.device}\","
     json += "\"${evt.isStateChange()}\","
@@ -169,7 +169,7 @@ def genericHandler(evt) {
     json += "\"${evt.value}\","
     json += "\"${evt.name}\","
     json += "\"${evt.isoDate}\""
-    json += "]}"
+    json += "]"
     // saveNewEvent() function present in smart contract is called in this request. 
     // Modify the endpoint of this URL accordingly if function name is changed
     // Modify the json parameter sent in this request if definition of the function is changed in the smart contract
