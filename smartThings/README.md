@@ -22,13 +22,15 @@ Using Xooa, provide a permanent cloud end-point for a SmartThings app, enable cl
 
 5. Relax:  Xooa is doing the blockchain heavy lifting. You'll be redirected to app dashboard when the deployment completes.
 
-6. Copy and save the **API Token** shown in the prompt. You will require this to authorize API requests to the Xooa app. You can also regenerate token from the **Identities** tab.
+6. Copy and save the **API Token** shown in the prompt. You will require this to authorize API requests from the SmartThings smartapp.
+
+	To regenerate **API Token**, go to `Identitites` tab. Click on **Actions** against the identity ID. Click on **Regenerate API Token**. Click **Generate**.
 
 ___
 
 ## Set up the logger SmartApp (SmartThings IDE)
 
-1. Log in with your Samsung SmartThings account to the SmartThings IDE at <https://graph.api.SmartThings.com>.
+1. Log in with your Samsung SmartThings account to the SmartThings IDE at <https://graph.api.smartThings.com>.
 
 2. From the menu, click **My SmartApps**.
 
@@ -52,7 +54,7 @@ You now need to publish the app.  You can do this with or without GitHub integra
 2. Click **Add new repository**.
 3.  Add the GitHub repo to your IDE with the following parameters:
     * `Owner`: xooa
-    * `Name`: samples
+    * `Name`: smartThings-xooa
     * `Branch`: master
 4. Click **Save**.
 5. Click **Update from Repo**.
@@ -64,7 +66,7 @@ You now need to publish the app.  You can do this with or without GitHub integra
 
 There are two apps available for SmartThings in the Google Play store. We recommend the classic app over the new app.
 
-## Event Logger SmartApp Setup (Smartphone)
+## Blockchain Event Logger SmartApp Setup (Smartphone)
 Before you begin, ensure that you:
 
 * Have the SmartThings app installed on your phone
@@ -108,15 +110,15 @@ Before you begin, ensure that you:
 
 8. Enter the **Xooa API token** provided in Xooa dashboard under `Identities`.
 
-## Event Viewer SmartApp Setup (SmartThings IDE)
+## Blockchain Event Viewer SmartApp Setup (SmartThings IDE)
 
-Follow the same steps as `Event Logger SmartApp Setup (SmartThings IDE)` but:
+Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings IDE)` but:
 
 1. Use `blockchain-event-viewer.groovy` instead of `blockchain-event-logger.groovy` from **samples** GitHub repo.
 
-2. Skip `Event Logger SmartApp Configuration` steps.
+2. Skip `Blockchain Event Logger SmartApp Configuration` steps.
 
-### Using Event Viewer SmartApp
+### Using Blockchain Event Viewer SmartApp
 
 #### SmartThings classic app (Preferred)
 
