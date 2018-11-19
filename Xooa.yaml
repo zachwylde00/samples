@@ -14,12 +14,12 @@ Apps:
   Xooa-Get-Set:
     Name: Get-Set
     Description: Xooa Get Set Smart Contract
-    path: /get-set/SmartContract
+    path: /get-set/smartcontract
     language: go
     README: https://github.com/Xooa/samples/blob/master/get-set/README.md
   Xooa-smartThings:
     Name: SmartThings Integration
     Description: Xooa SmartThings Smart Contract
-    path: /smartThings/SmartContract/
+    path: /smartthings/smartcontract/
     language: go
-    README: https://github.com/Xooa/samples/blob/master/smartThings/README.md
+    README: https://github.com/Xooa/samples/blob/master/smartthings/README.md
