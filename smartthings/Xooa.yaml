@@ -11,15 +11,9 @@
 #     README:              -> Path to the documentation of the smart contract App [Optional Parameter]
 
 Apps:
-  Xooa-Get-Set:
-    Name: Get-Set
-    Description: Xooa Get Set Smart Contract
-    path: /get-set/smartcontract
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/get-set/README.md
-  Xooa-SmartThings:
+  Xooa-smartThings:
     Name: SmartThings Integration
     Description: Xooa SmartThings Smart Contract
-    path: /smartthings/smartcontract/
+    path: /smartcontract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/smartthings/README.md
