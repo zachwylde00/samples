@@ -12,7 +12,7 @@ This app runs on `Hyperledger Fabric`. It is written in `GoLang`.
 
 1. Go to the **Details** tab, and then click **Explore API's**.
 
-2. Search for **API Token**. <!--TODO: check this step-->
+2. Enter **API Token** in the field in navigation pane.
 
 3. Go to **Smart Contract > Invoke Smart Contract Function**.
 
@@ -28,10 +28,10 @@ This app runs on `Hyperledger Fabric`. It is written in `GoLang`.
 
 6. Click **try**. 
 
-7. > **Congrats!** You have saved data in a blockchain using **Xooa** for the first time.
+> **Congrats!** You have saved data in a blockchain using **Xooa**.
 
-8. <!--TO DO: refer to section on doing it through console show how to get the data from teh API now To view your transaction as part of the blockchain, navigate to **Ledger** from your Xooa dashboard.-->
+7. To view your transaction as part of the blockchain, go to `https://xooa.com/blockchain/ledger` or navigate to **Ledger** from your Xooa console.
 
-9. <!--Navigate to **Transactions** tab.-->
+8. Navigate to **Transactions** tab.
 
-10. <!--You can expand the data field to see your transactions.-->
+9. You can expand the data field to see your transactions.

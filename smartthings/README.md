@@ -5,7 +5,7 @@ The repository used in this example is <https://github.com/Xooa/samples>
 
 # Overview
 
-This repository contains the blockchain smart contract (sometimes also called "chaincode") and the SmartThings SmartApp. You'll deploy the smart contract via the Xooa console and the SmartApp via the SmartThings IDE.
+This repository contains the blockchain smart contract (sometimes also called "chaincode") and SmartThings SmartApps. You'll deploy the smart contract via the Xooa console and the SmartApps via the SmartThings IDE. The Blockchain Event Logger SmartApp allows you to log SmartThings events to blockchain. The Blockchain Event Viewer SmartApp allows you to retrieve and view SmartThings events logged in a blockchain. 
 
 Using Xooa, provide a permanent cloud end-point for a SmartThings app, enable cloud-to-cloud integration while maintaining the peer-to-peer capabilities of blockchain.
 
@@ -28,7 +28,7 @@ Using Xooa, provide a permanent cloud end-point for a SmartThings app, enable cl
 
 ___
 
-## Set up the logger SmartApp (SmartThings IDE)
+## Blockchain Event Logger SmartApp Setup (SmartThings IDE)
 
 1. Log in with your Samsung SmartThings account to the SmartThings IDE at <https://graph.api.smartthings.com/>.
 
@@ -76,7 +76,7 @@ Before you begin, ensure that you:
 
 ### SmartThings Classic App (Preferred)
 
-1. Open the SmartThings app and tap **automation**.
+1. Open the SmartThings app and tap **Automation** in the bottom navigation bar.
 
 2. Tap the SmartApps tab on top.
 
@@ -94,7 +94,7 @@ Before you begin, ensure that you:
 
 ### SmartThings New App
 
-1. Tap `automations` in lower bar.
+1. Open the SmartThings app and tap **Automations** in the bottom navigation bar.
 
 2. Tap **Add** (Android) or **+** (iOS).
 
@@ -108,7 +108,7 @@ Before you begin, ensure that you:
 
 7. Select which devices you want to log in the Xooa blockchain.
 
-8. Enter the **Xooa API token** provided in Xooa dashboard under `Identities`.
+8. Enter the **Xooa API token** you noted earlier.
 
 ## Blockchain Event Viewer SmartApp Setup (SmartThings IDE)
 
@@ -116,13 +116,11 @@ Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings ID
 
 1. Use `blockchain-event-viewer.groovy` instead of `blockchain-event-logger.groovy` from **samples** GitHub repo.
 
-2. Skip `Blockchain Event Logger SmartApp Configuration` steps.
+2. Skip `Blockchain Event Logger SmartApp Setup (Smartphone)` steps.
 
-### Using Blockchain Event Viewer SmartApp
+### SmartThings classic app (Preferred)
 
-#### SmartThings classic app (Preferred)
-
-1. Tap **automation** in the lower bar.
+1. Open the SmartThings app and tap **Automation** in the bottom navigation bar.
 
 2. Tap the SmartApps tab on top.
 
@@ -130,9 +128,9 @@ Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings ID
 
 4. Scroll to the bottom and tap **My Apps**.
 
-5. Find `Blockchain Event Viewer` and tap it.
+5. Tap the `Blockchain Event Viewer` app.
 
-6. Enter the **Xooa API token** provided in the Xooa dashboard under `Identities`.
+6. Enter the **Xooa API token** you noted earlier.
 
 7. Click **Next** to proceed to view the devices logging to the blockchain.
 
@@ -142,9 +140,9 @@ Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings ID
 
 10. Click **Save** to store **Xooa API Token** with SmartApp for future uses.
 
-#### SmartThings new app
+### SmartThings new app
 
-1. Tap **automations** in lower bar.
+1. Open the SmartThings app and tap **Automations** in the bottom navigation bar.
 
 2. Tap **Add**(in android) or **+**(in IOS).
 
@@ -156,7 +154,7 @@ Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings ID
 
 6. Tap the app.
 
-7. Enter the **Xooa API token** provided in Xooa dashboard under `Identities`.
+7. Enter the **Xooa API token** you noted earlier.
 
 8. Click **Next** to proceed to view devices logging to the blockchain.
 

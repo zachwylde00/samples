@@ -14,7 +14,7 @@ Xooa provides a permanent cloud end-point for the smart contract, enabling cloud
 2. Go to **Apps**>**Deploy New**. If you didn't log in with your GitHub account, you will need to do it now.
 3. Find the Github repository with the smart contract you want to deploy.  For example, use **Xooa/samples** to deploy one of the sample provided by Xooa. Tap **Select**, and then **Next**.
 
-<img src="https://github.com/Xooa/samples/blob/master/screenshots/deploy.png" alt="deploy" width="500px"/>
+<img src="https://github.com/Xooa/samples/blob/master/images/deploy.png" alt="deploy" width="500px"/>
 
 4. Select the Smart Contract you want to deploy, and then click **Deploy**.
 
@@ -52,7 +52,7 @@ ___
 
 3. Go to the **Smart Contract > Invoke Smart Contract Function** from the navigation pane.
 
-<img src="https://github.com/Xooa/samples/blob/master/screenshots/invoke.png" alt="Invoke" width="300px"/>
+<img src="https://github.com/Xooa/samples/blob/master/images/invoke.png" alt="Invoke" width="300px"/>
 
 4. In the **fcn** field, enter the Smart Contract function name you wish to Invoke. 
 For example, if using this repo **get-set** smart contract to store data in blockchain `set` should be entred as the **fcn** field value 
