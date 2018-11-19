@@ -112,11 +112,13 @@ Before you begin, ensure that you:
 
 ## Blockchain Event Viewer SmartApp Setup (SmartThings IDE)
 
-Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings IDE)` but:
+Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings IDE)` except:
 
-1. Use `blockchain-event-viewer.groovy` instead of `blockchain-event-logger.groovy` from **samples** GitHub repo.
+1. For section **Without GitHub integration**, copy this *groovy* script from the **smartthings** folder of the  **samples** repo: <https://raw.githubusercontent.com/Xooa/samples/master/smartthings/blockchain-event-viewer.groovy>
 
-2. Skip `Blockchain Event Logger SmartApp Setup (Smartphone)` steps.
+2. For section **With GitHub integration**,in step 7, choose `blockchain-event-viewer.groovy` from **samples** GitHub repo.
+
+3. Skip `Blockchain Event Logger SmartApp Setup (Smartphone)` steps.
 
 ### SmartThings classic app (Preferred)
 

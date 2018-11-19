@@ -16,7 +16,7 @@
  * Original source via IBM Corp:
  *  https://hyperledger-fabric.readthedocs.io/en/release-1.2/chaincode4ade.html#pulling-it-all-together
  *
- * Modifications from: Arisht Jain:
+ * Modifications by: Arisht Jain:
  *  https://github.com/xooa/samples
  */
 
