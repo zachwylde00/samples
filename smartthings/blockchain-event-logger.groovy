@@ -16,7 +16,7 @@
  * Original source via Brian Keifer:
  *  https://raw.githubusercontent.com/bkeifer/smartthings/master/Logstash%20Event%20Logger/LogstashEventLogger.groovy
  *
- * Modifications from: Arisht Jain:
+ * Modifications by: Arisht Jain:
  *  https://github.com/xooa/samples
  *
  * Changes:
@@ -27,7 +27,7 @@ definition(
     name: "Blockchain Event Logger",
     namespace: "xooa",
     author: "Arisht Jain",
-    description: "Log smartThings events to Xooa blockchain platform.",
+    description: "Log SmartThings events to Xooa blockchain platform.",
     category: "Convenience",
     iconUrl: "https://xooa.com/blockchain/img/logo1.png",
     iconX2Url: "https://xooa.com/blockchain/img/logo1.png",
