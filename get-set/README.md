@@ -4,6 +4,7 @@ This repository contains the get-set smart contract.  Deploy the smart contract 
 
 Here, we'll show you how to invoke a smart contract and write data to the blockchain and how to retrieve that data.
 
+**Project documentation:** <https://docs.xooa.com>
 ___
 
 This app runs on `Hyperledger Fabric`. It is written in `GoLang`.

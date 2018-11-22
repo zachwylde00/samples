@@ -3,6 +3,8 @@ This page provides a step-by-step tutorial to integrate a blockchain SmartApp wi
 
 The repository used in this example is <https://github.com/Xooa/samples>
 
+**Project documentation:** <https://docs.xooa.com>
+
 # Overview
 
 This repository contains the blockchain smart contract (sometimes also called "chaincode") and SmartThings SmartApps. You'll deploy the smart contract via the Xooa console and the SmartApps via the SmartThings IDE. The Blockchain Event Logger SmartApp allows you to log SmartThings events to blockchain. The Blockchain Event Viewer SmartApp allows you to retrieve and view SmartThings events logged in a blockchain. 

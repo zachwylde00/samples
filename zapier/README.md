@@ -3,6 +3,8 @@ This page provides a step-by-step tutorial to integrate a Zapier app with Xooa's
 
 The repository used in this example is <https://github.com/Xooa/samples>
 
+**Project documentation:** <https://docs.xooa.com>
+
 # Overview
 
 This repository contains a blockchain smart contract, also known as chaincode. Use the Xooa console to deploy it.

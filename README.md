@@ -1,6 +1,8 @@
 
 This page provides a step-by-step tutorial to deploy a sample app with Xooa's blockchain-as-a-service (BaaS).
 
+**Project documentation:** <https://docs.xooa.com>
+
 # Overview
 
 This repository contains a blockchain smart contract, also known as chaincode. Use the Xooa console to deploy it.
