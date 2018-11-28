@@ -29,3 +29,9 @@ Apps:
     path: /zapier/smartcontract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/zapier/README.md
+  Xooa-QuickBooks:
+    Name: QuickBooks Integration
+    Description: Xooa QuickBooks Smart Contract
+    path: /quickbooks/smartcontract/
+    language: go
+    README: https://github.com/Xooa/samples/blob/master/quickbooks/README.md
