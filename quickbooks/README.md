@@ -39,3 +39,17 @@ ___
 5. Enter **API token** you have noted earlier. Enter **function name** to call when any change happens.
 
 	> The app is now configured and ready to receive any event from *QuickBooks* and logs to *Xooa blockchain*.
+
+## Log and view data in Xooa Blockchain
+
+1. Log in to the company you have just connected to the Xooa app.
+
+2. Create or update an entity. Wait for few minutes as it can take upto 10 minutes to log data in the blolckchain.
+
+3. Go to <https://xooa.com/blockchain/ledger> > Transactions.
+
+4. Expand the **Data** field of latest transaction from the ledger.
+
+	> Congrats! You have logged your QuickBooks entry in the ledger successfully.
+
+<img src="https://github.com/Xooa/samples/blob/master/images/qb_ledger.png" alt="ledger" width="500px"/>
