@@ -52,4 +52,4 @@ ___
 
 	> Congrats! You have logged your QuickBooks entry in the ledger successfully.
 
-<img src="https://github.com/Xooa/samples/blob/master/images/qb_ledger.png" alt="ledger" width="500px"/>
+<img src="https://github.com/Xooa/samples/blob/master/images/qb_ledger.png" alt="ledger" width="900px"/>
