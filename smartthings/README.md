@@ -10,7 +10,7 @@ This repository contains an event logger SmartApp and the smart contract (chainc
 **To enable the app you need to:**
 
 1. Deploy the SmatThings smart contract in xooa. 
-2. Set up the event logger SmartApp and the event viewer SmartApp via either the SmartThings IDE or your mobile device (see below).
+2. Set up the Event Logger SmartApp and the Event Viewer SmartApp via both the SmartThings IDE and your mobile device (see below).
 
 ## Deploy the SmartThings smart contract 
 
@@ -49,7 +49,7 @@ You now need to publish the app.  You can do this with or without GitHub integra
 
 **With GitHub integration** 
 
-If you haven't already set up GitHub to work with SmartThings, here's the community FAQ on the subject <https://community.smartthings.com/t/faq-github-integration-how-to-add-and-update-from-repositories/39046>
+> **Tip:** If you haven't already set up GitHub to work with SmartThings, here's the community FAQ on the subject <https://community.smartthings.com/t/faq-github-integration-how-to-add-and-update-from-repositories/39046>
 
 1. From the menu, click **My SmartApps**, and then click **Settings**.   
 2. Click **Add new repository**.
@@ -122,4 +122,4 @@ Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings ID
 
 ## Set up the Event Viewer SmartApp (Android/iOS)
 
-Follow the same steps as `Blockchain Event Logger SmartApp Setup (Android/iOS)` except use the Event Viewer app instead. 
+Follow the same steps as `Blockchain Event Logger SmartApp Setup (Android/iOS)` except use the Event Viewer SmartApp instead. 
