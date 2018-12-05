@@ -119,51 +119,7 @@ Follow the same steps as `Blockchain Event Logger SmartApp Setup (SmartThings ID
 
 2. For section **With GitHub integration**,in step 7, choose `blockchain-event-viewer.groovy` from **samples** GitHub repo.
 
-3. Skip `Blockchain Event Logger SmartApp Setup (Smartphone)` steps.
 
-### SmartThings classic app (preferred)
+## Set up the Event Viewer SmartApp (Android/iOS)
 
-1. Open the SmartThings app and tap **Automation** in the bottom navigation bar.
-
-2. Tap the SmartApps tab on top.
-
-3. Tap **Add a SmartApp**.
-
-4. Scroll to the bottom and tap **My Apps**.
-
-5. Tap the `Blockchain Event Viewer` app.
-
-6. Enter the **Xooa API token** you noted earlier.
-
-7. Click **Next** to proceed to view the devices logging to the blockchain.
-
-8. Click any device to view the past logged events for that device.
-
-9. Input the date for which you want to view the past logged events.(Last logged date is preset)
-
-10. Click **Save** to store **Xooa API Token** with SmartApp for future uses.
-
-### SmartThings new app
-
-1. Open the SmartThings app and tap **Automations** in the bottom navigation bar.
-
-2. Tap **Add**(in android) or **plus** **+**(in iOS).
-
-3. If prompted, select the location you want to add the app to.
-
-4. For iOS only, tap **Done**.
-
-5. Find `Blockchain Event Viewer` 
-   Usually it takes a few seconds to appear at the bottom of the page.
-
-6. Tap the app.
-
-7. Enter the **Xooa API token** you noted earlier.
-
-8. Click **Next** to proceed to view devices logging to the blockchain.
-
-9. Click on any device to view the past logged events for that device.
-
-10. Enter the date for which you want to view the past logged events.
-
-11. Optionally and so you don't need to enter it again, click **Save** to store the Xooa API token.
+Follow the same steps as `Blockchain Event Logger SmartApp Setup (Android/iOS)` except use the Event Viewer app instead. 
