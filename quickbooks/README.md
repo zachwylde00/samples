@@ -1,5 +1,5 @@
 
-This page provides a step-by-step tutorial to integrate a Quickbooks app with Xooa's blockchain-as-a-service (BaaS).
+This page provides a step-by-step tutorial to integrate a Quickbooks app with Xooa's blockchain platform-as-a-service (PaaS).
 
 The repository used in this example is <https://github.com/Xooa/samples>
 

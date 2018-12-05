@@ -1,5 +1,5 @@
 
-This page provides a step-by-step tutorial to deploy a sample app with Xooa's blockchain-as-a-service (BaaS).
+This page provides a step-by-step tutorial to deploy a sample app with Xooa's blockchain platform-as-a-service (PaaS).
 
 **Project documentation:** <https://docs.xooa.com>
 
