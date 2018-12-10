@@ -1,30 +1,25 @@
 
-This page provides a step-by-step tutorial to integrate a Zapier app with Xooa's blockchain platform-as-a-service (PaaS).
-
-The repository used in this example is <https://github.com/Xooa/samples>
+This page provides a step-by-step tutorial to integrate the Zapier app with Xooa's blockchain platform-as-a-service (PaaS).
 
 **Project documentation:** <https://docs.xooa.com>
 
 # Overview
 
-This repository contains a blockchain smart contract, also known as chaincode. Use the Xooa console to deploy it.
+This repository contains the smart contract (chaincode) for zapier. Use the Xooa console to deploy it.
 
 Xooa provides a permanent cloud end-point for the zapier app, enabling cloud-to-cloud integration, while retaining blockchain's peer-to-peer capabilities.
 
 ## Deploy the Zapier smart contract 
 
- 
-1. Log in to the Xooa blockchain console at <https://xooa.com/blockchain>
+1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Zapier** as the smart contract.
 
-2. Go to **Apps** > **Deploy New**. If you didn't log in with your GitHub account, you will need to do it now.
+2. Record the **API Token** when it is shown: you will need it to authorize API requests from SmartApp.
 
-3. Select **Xooa Git Repos**, and then click **Next**.
-
-4. Select the branch (usually **master**) and **Xooa-zapier** as the Smart Contract, and then click **Deploy**.
-
-5. Relax:  Xooa is doing the blockchain heavy lifting. You'll be redirected to app dashboard when the deployment completes.
-
-6. Copy and save the **API Token** shown in the prompt. You will require this to authorize API requests to the Xooa app. You can also regenerate token from the **Identities** tab.
+   > **Tip:**  to regenerate the API token: 
+   >
+   > 1. Go to the **Identities** tab. 
+   > 2. Next to the ID, select **Actions**.
+   > 3. Select **Regenerate API Token**, and then select **Generate**.
 
 ___
 

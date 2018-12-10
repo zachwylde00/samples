@@ -2,14 +2,27 @@
 
 This repository contains the get-set smart contract.  Deploy the smart contract via the Xooa console, refer to  <https://github.com/Xooa/samples/blob/master/README.md> to get started, deploying **Xooa-get-set** from this repository.
 
-Here, we'll show you how to invoke a smart contract and write data to the blockchain and how to retrieve that data.
+Here, you'll get to know: how to invoke a smart contract, write data to the blockchain and how to retrieve that data.
 
 **Project documentation:** <https://docs.xooa.com>
 ___
 
 This app runs on `Hyperledger Fabric`. It is written in `GoLang`.
 
-### Explore the get-set smart Contract end-points
+## Deploy the SmartThings smart contract 
+
+
+1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Get-Set** as the smart contract.
+
+2. Record the **API Token** when it is shown: you will need it to authorize API requests from SmartApp.
+
+   > **Tip:**  to regenerate the API token: 
+   >
+   > 1. Go to the **Identities** tab. 
+   > 2. Next to the ID, select **Actions**.
+   > 3. Select **Regenerate API Token**, and then select **Generate**.
+
+## Explore the get-set smart Contract end-points
 
 1. Go to the **Details** tab, and then click **Explore API's**.
 
