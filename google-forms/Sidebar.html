@@ -1,0 +1,181 @@
+<!--
+* Xooa Google-forms add-on
+*
+* Copyright 2018 Xooa
+*
+* Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+* in compliance with the License. You may obtain a copy of the License at:
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
+* for the specific language governing permissions and limitations under the License.
+*
+* Author: Arisht Jain
+* Last Modified: 25/09/2018
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <!-- The CSS package above applies Google styling to buttons and other elements. -->
+    <style>
+        .branding-below {
+      bottom: 54px;
+      top: 0;
+    }
+    .branding-text {
+      left: 7px;
+      position: relative;
+      top: 3px;
+    }
+    .logo {
+      vertical-align: middle;
+    }
+    .width-100 {
+      width: 100%;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    label {
+      font-weight: bold;
+    }
+    #creator-options {
+      background-color: #eee;
+      border-color: #eee;
+      border-width: 5px;
+      border-style: solid;
+    }
+
+    #api-token,
+    #button-bar,
+    #submit-subject {
+      margin-bottom: 10px;
+    }
+
+    #response-step {
+      display: inline;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar branding-below">
+        <form>
+            <div class="block form-group" id="creator-options">
+
+                <label for="api-token">
+                    Xooa API Token <sup style="color:red">*</sup>
+                </label>
+                <input type="text" class="width-100" id="api-token" required>
+
+                <label for="function-name">
+                    Function Name <sup style="color:red">*</sup>
+                </label>
+                <input type="text" class="width-100" id="function-name" value="saveNewResponse" required>
+            </div>
+
+            <div class="block" id="button-bar">
+                <button class="action" id="save-settings">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="sidebar bottom">
+        <img alt="Add-on logo" class="logo" width="16" src="https://xooa.com/blockchain/img/favicon.ico">
+        <span class="gray branding-text">Blockchain logger by Xooa</span>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+
+    </script>
+    <script>
+        /**
+         * On document load, assign required handlers to each element,
+         * and attempt to load any saved settings.
+         */
+        $(function () {
+            $('#save-settings').click(saveSettingsToServer);
+            google.script.run
+                .withSuccessHandler(loadSettings)
+                .withFailureHandler(showStatus)
+                .withUserObject($('#button-bar').get())
+                .getSettings();
+        });
+
+        /**
+         * Callback function that populates the notification options using
+         * previously saved values.
+         *
+         * @param {Object} settings The saved settings from the client.
+         */
+        function loadSettings(settings) {
+            $('#api-token').val(settings.apiToken);
+            $('#response-step').val(!settings.responseStep ?
+                10 : settings.responseStep);
+            $('#submit-subject').val(!settings.responseSubject ?
+                'Thank you for filling out our form!' :
+                settings.responseSubject);
+            $('#submit-notice').val(!settings.responseText ?
+                'Thank you for responding to our form!' :
+                settings.responseText);
+        }
+
+        /**
+         * Collects the options specified in the add-on sidebar and sends them to
+         * be saved as Properties on the server.
+         */
+        function saveSettingsToServer() {
+            this.disabled = true;
+            $('#status').remove();
+
+            var settings = {
+                'apiToken': $('#api-token').val().trim(),
+                'functionName': $('#function-name').val().trim()
+            };
+
+            if (!settings.apiToken || !settings.functionName) {
+                showStatus('Enter Xooa API Token', $('#button-bar'));
+                this.disabled = false;
+                return;
+            }
+
+
+            // Save the settings on the server
+            google.script.run
+                .withSuccessHandler(
+                    function (msg, element) {
+                        showStatus('Saved settings. This form is now configured for logging to Xooa blockchain.', $('#button-bar'));
+                        element.disabled = false;
+                    })
+                .withFailureHandler(
+                    function (msg, element) {
+                        showStatus(msg, $('#button-bar'));
+                        element.disabled = false;
+                    })
+                .withUserObject(this)
+                .saveSettings(settings);
+        }
+
+        /**
+         * Inserts a div that contains an status message after a given element.
+         *
+         * @param {String} msg The status message to display.
+         * @param {Object} element The element after which to display the Status.
+         */
+        function showStatus(msg, element) {
+            var div = $('<div>')
+                .attr('id', 'status')
+                .attr('class', 'error')
+                .text(msg);
+            $(element).after(div);
+        }
+    </script>
+</body>
+
+</html>

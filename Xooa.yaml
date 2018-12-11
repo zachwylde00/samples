@@ -35,3 +35,9 @@ Apps:
     path: /quickbooks/smartcontract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/quickbooks/README.md
+  Xooa-Google-Forms:
+    Name: Google Forms Integration
+    Description: Xooa Google forms Smart Contract
+    path: /google-forms/SmartContract/
+    language: go
+    README: https://github.com/Xooa/samples/blob/master/google-forms/README.md
