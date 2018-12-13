@@ -20,7 +20,7 @@ Apps:
   Xooa-MS-Dynamics:
     Name: GetSetDel (multi key-value pairs)
     Description: Xooa Get Set Delete Smart Contract to store multiple keys in a single call
-    path: /MS-Dynamics/smartcontract/
+    path: /ms-dynamics/smartcontract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/MS-Dynamics/README.md
   Xooa-Salesforce:
