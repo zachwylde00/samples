@@ -1,3 +1,4 @@
+# Xooa Salesforce Smart Contract
 
 This page provides a step-by-step tutorial to integrate a Salesforce app with Xooa's blockchain-as-a-service (BaaS).
 

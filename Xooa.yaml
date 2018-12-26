@@ -53,3 +53,9 @@ Apps:
     path: /google-forms/SmartContract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/google-forms/README.md
+  Xooa-Dropbox:
+    Name: Xooa Dropbox Integration
+    Description: Xooa Dropbox Smart Contract
+    path: /dropbox/smartcontract/
+    language: go
+    README: https://github.com/Xooa/samples/blob/master/dropbox/README.md
