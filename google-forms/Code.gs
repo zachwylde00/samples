@@ -23,14 +23,14 @@
  *  for the specific language governing permissions and limitations under the License.
  *  
  *  Author: Arisht Jain
- *  Last Modified: 08/10/2018
+ *  Last Modified: 18/12/2018
  */
 
 /**
  * A global constant String holding the title of the add-on. This is
  * used to identify the add-on in the notification emails.
  */
-var ADDON_TITLE = 'Xooa blockchain';
+var ADDON_TITLE = 'Xooa Blockchain';
 
 /**
  * Adds a custom menu to the active form to show the add-on sidebar.
@@ -178,7 +178,6 @@ function sendResponse() {
       ]
 
     Logger.log(json);
-    console.log(json);
       
     // Call invoke API to log response in Xooa blockchain
     var options = {
@@ -194,7 +193,6 @@ function sendResponse() {
     var url = "https://api.xooa.com/api/v1/invoke/" + settings.getProperty('functionName')
     var response = UrlFetchApp.fetch(url, options);
     Logger.log(response.getContentText())
-    console.log(response.getContentText())
     
     if(response.getResponseCode() == 202) {
       // Invoke request was not completed immediately. Going to call results API.
@@ -223,14 +221,11 @@ function sendResponse() {
           // Invoke request is completed.
           responseStatus = response1.getResponseCode();
           Logger.log(response1.getContentText())
-          console.log(response1.getContentText())
         }
       }
       Logger.log("Request to results API completed. Api ran for "+ i + " times.")
-      console.log("Request to results API completed. Api ran for "+ i + " times.")
     }
   } else {
     Logger.log("No responses received.")
-    console.log("No responses received.")
   }
 }
