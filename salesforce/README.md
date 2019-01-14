@@ -12,7 +12,7 @@ Using Xooa, you can provide a permanent cloud end-point for Salesforce, enabling
 
 ## Deploy the Salesforce chaincode 
 
-1. Log in or create a Xooa account at <https://xooa.com/blockchain>
+1. Log in or create a Xooa account at [https://xooa.com/blockchain](https://xooa.com/blockchain?source=samplesRepo)
 
 2. Click **apps**, then **Deploy New**. 
 If this is your first time deploying a chaincode app with Xooa, you will need to authorize Xooa with your GitHub account.

@@ -12,7 +12,7 @@ Xooa provides a permanent cloud end-point for the smart contract, enabling cloud
 ## Deploy the smart contract
 
 
-1. Log in to the Xooa blockchain console at https://xooa.com/blockchain.
+1. Log in to the Xooa blockchain console at [https://xooa.com/blockchain](https://xooa.com/blockchain?source=samplesRepo).
 2. Go to **Apps**>**Deploy New**. If you didn't log in with your GitHub account, you will need to do it now.
 3. Find the Github repository with the smart contract you want to deploy. For example, use **Xooa/samples** to deploy one of the sample provided by Xooa. Tap **Select**, and then **Next**.
   > For accesing **Private Git Repos**, click or tap **Authorize Private Github Access**.
