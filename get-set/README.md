@@ -44,7 +44,7 @@ This app runs on `Hyperledger Fabric`. It is written in `GoLang`.
 
 > **Congrats!** You have saved data in a blockchain using **Xooa**.
 
-7. To view your transaction as part of the blockchain, go to [https://xooa.com/blockchain](https://xooa.com/blockchain/ledger?source=samplesRepo) or navigate to **Ledger** from your Xooa console.
+7. To view your transaction as part of the blockchain, go to [https://xooa.com/blockchain](https://xooa.com/blockchain/ledger?utm_source=samplesRepo) or navigate to **Ledger** from your Xooa console.
 
 8. Navigate to **Transactions** tab.
 

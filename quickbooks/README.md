@@ -42,7 +42,7 @@ ___
 
 2. Create or update an entity. Wait for few minutes as it can take upto 10 minutes to log data in the blolckchain.
 
-3. Go to [https://xooa.com/blockchain](https://xooa.com/blockchain/ledger?source=samplesRepo) > Transactions.
+3. Go to [https://xooa.com/blockchain](https://xooa.com/blockchain/ledger?utm_source=samplesRepo) > Transactions.
 
 4. Expand the **Data** field of latest transaction from the ledger.
 
