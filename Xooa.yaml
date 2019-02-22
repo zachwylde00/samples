@@ -17,12 +17,12 @@ Apps:
     path: /get-set/smartcontract
     language: go
     README: https://github.com/Xooa/samples/blob/master/get-set/README.md
-  Xooa-MS-Dynamics:
+  Xooa-Microsoft:
     Name: GetSetDel (multi key-value pairs)
     Description: Xooa Get Set Delete Smart Contract to store multiple keys in a single call
-    path: /ms-dynamics/smartcontract/
+    path: /microsoft/smartcontract/
     language: go
-    README: https://github.com/Xooa/samples/blob/master/MS-Dynamics/README.md
+    README: https://github.com/Xooa/samples/blob/master/microsoft/README.md
   Xooa-Salesforce:
     Name: Salesforce Integration
     Description: Xooa Salesforce Smart Contract
@@ -59,3 +59,9 @@ Apps:
     path: /dropbox/smartcontract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/dropbox/README.md
+  Xooa-Ethereum-Get-Set:
+    Name: Ethereum Smart Contract
+    Description: Solidity Get Set Smart Contract for Ethereum
+    path: /ethereum/smartcontract/GetSetContract.sol
+    language: solidity
+    README: https://github.com/Xooa/samples/blob/master/ethereum/README.md

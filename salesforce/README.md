@@ -1,54 +1,88 @@
+# Xooa Salesforce Smart Contract
 
-This page provides a step-by-step tutorial to integrate a Salesforce app with Xooa's Blockchain platform-as-a-service (PaaS).
+This page provides an overview to Xooa Salesforce Smart Contract functionalities.
+This smart contract is used in Xooa-Salesforce app.
 
-The repository used in this example is <https://github.com/Xooa/integrations>
+This smart contract runs on `Hyperledger Fabric` and is written in `GoLang`.
+
 
 ## Overview
 
-This repository contains the blockchain chaincode (henceforth chaincode) and the Salesforce app. You will deploy the chaincode via the Xooa console and the Salesforce app via the Salesforce setup page.
+To test the names of the methods in the chaincode any method can be invoked with a single argument as "Xooa Test" and it will return a 200 success response saying "Method test call. Nothing will be committed to ledger". If the method does not exist in the chaincode an error response will be received.
 
-Using Xooa, you can provide a permanent cloud end-point for Salesforce, enabling cloud-to-cloud integration while maintaining the peer-to-peer capabilities of blockchain.
-
-## Deploy the Salesforce chaincode 
-
-1. Log in or create a Xooa account at <https://xooa.com/blockchain>
-
-2. Click **apps**, then **Deploy New**. 
-If this is your first time deploying a chaincode app with Xooa, you will need to authorize Xooa with your GitHub account.
-
-    a. Click **Connect to GitHub**.
-
-    b. Follow the onscreen instructions to complete the authorization process.
-
-3. Search for the **integrations** repo (or your fork).
-
-4. Select the repo, and then click **Next**.
-
-5. Enter a name and description for your app.
-
-6. Select the branch (usually **master**) and **salesforce** as the chaincode, and then click **Deploy**.
-
-7. Relax.  Xooa is doing the blockchain heavy lifting. You will be redirected to app dashboard when the deployment completes.
-
-8. Copy and store the **API Token**. You will need this to authorize API requests in your **Salesforce** app.
-
-___
-
-## Developer account and installation
-A developer account is required for running the salesforce app from the IDE. 
-
-1. Visit developer.salesforce.com and complete the process to get a developer account.
-
-2. https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6F000003o7IZ Open this link and login to begin the instllation process. 
-
-3. After finishing the installation, open App Launcher and click on Xooa Blockchain to open the app.
-
-4. In the first page named 'Settings', under Xooa Settings section, enter the **API Token**. For function names, enter **saveData** as the value for insert/update function and **deleteData** as the value for delete function and click `Save`. The fuction name parameter corresponds to the function described in the chaincode we deployed earlier and can be changed as per your (i.e., chaincode developer's) need.
-
-5. On the right section of page under Salesforce Settings section, select all the triggers you like and hit `Save`.
-
-6. This completes the basic setup for using Salesforce with Xooa. The triggers and their operations can be changed dynamically on the Settings page to enable/disable saving data to Xooa.
+This smart contract provides 3 functions:
+  
+  * storeData
+  * retrieveData
+  * deleteData
 
 
-## Troubleshooting
-You can open `Developer Console` while being logged in to Salesforce and check the **Logs** section entries to troubleshoot the errors.
+#### StoreData
+StoreData method is used to store the salesforce objects in the ledger.
+
+The storeData method is required to be called with 3 arguments. These arguments need to be the object type, object id and the object data. The first two arguments are used to create a composite key and the third argument is stored as the value json.
+
+A success response returns the composite key.
+
+
+#### RetrieveData
+RetrieveData method is used to fetch value associated with the composite key in the ledger.
+
+The retrieveData method requires 2 arguments - the object type and the object id. The ledger is searched by creating a composite key with the two values.
+
+A success response returns the value associated with the key.
+
+
+#### deleteData
+DeleteData method is used to delete the state of a key from the ledger.
+
+The deleteData method requires 2 arguments - the object type and the object id. The value in the ledger is deleted by using the composite key created with the two input values.
+
+A success response returns the composite key.
+
+
+## Deploy the Salesforce smart contract 
+ 
+1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Salesforce** as the smart contract.
+
+2. Record the **API Token** when it is shown: you will need it to authorize API requests from Dropbox App.
+
+   > **Tip:**  to regenerate the API token: 
+   >
+   > 1. Go to the **Identities** tab in the App. 
+   > 2. Next to the ID, select **Actions**.
+   > 3. Select **Regenerate API Token**, and then select **Generate**.
+
+
+
+## Explore the get-set smart Contract end-points
+
+This smart contract is meant to be used with Salesforce data as in the object id but can be tested with the explorer to get an overview.
+
+1. Go to the **Details** tab, and then click **Explore API's**.
+
+2. Enter **API Token** in the field in navigation pane.
+
+3. Go to **Smart Contract > Invoke Smart Contract Function**.
+
+  	**Invoke** will write to the blockchain. The functions **storeData** and **deleteData** are used to invoke the smart contract.
+
+  	**Query** will read data from the blockchain. The function **retrieveData** is used to query the smart contract.
+
+4. In the **fcn** field, enter `storeData`.
+
+5. In the **body** field, enter the data you want to store in the blockchain in the format:
+
+  	`[ "<key>", "<value>" ]`
+
+  Key can be replaced with the object id in Salesforce and value with a JSON containing object details.
+
+6. Click **try**. 
+
+> **Congrats!** You have saved data in a blockchain using **Xooa**.
+
+7. To view your transaction as part of the blockchain, go to [https://xooa.com/blockchain](https://xooa.com/blockchain/ledger?utm_source=samplesRepo) or navigate to **Ledger** from your Xooa console.
+
+8. Navigate to **Transactions** tab.
+
+9. You can expand the data field to see your transactions.

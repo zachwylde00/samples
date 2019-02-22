@@ -1,17 +1,16 @@
-# Xooa Get-Set Smart Contract
+# Xooa Ethereum-Get-Set Smart Contract
 
-This page provides an overview to Xooa Get-Set Smart Contract functionalities.
+This page provides an overview to Xooa-Ethereum-Get-Set Smart Contract functionalities.
 
-This smart contract runs on `Hyperledger Fabric` and is written in `GoLang`.
+This smart contract runs on `Ethereum` and is written in `Solidity`.
 
 
 ## Overview
 
-This smart contract provides 3 functions:
+This smart contract provides 2 functions:
   
   * Get
   * Set
-  * GetVersion
 
 
 #### Get
@@ -29,16 +28,10 @@ This method creates a transaction in the blockchain ledger and stores the key va
 If it succeeds in creating the transaction it returns a response with key value pair as payload or else an error response.
 
 
-#### GetVersion
 
-This method is used to get the version of the chaincode that is deployed.
-It returns the chaincode name and the version number for it.
-
-
-
-## Deploy the Get-Set smart contract 
+## Deploy the Xooa-Ethereum-Get-Set smart contract 
  
-1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Get-Set** as the smart contract.
+1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Ethereum-Get-Set** as the smart contract.
 
 2. Record the **API Token** when it is shown: you will need it to authorize API requests from Dropbox App.
 
@@ -50,7 +43,9 @@ It returns the chaincode name and the version number for it.
 
 
 
-## Explore the get-set smart Contract end-points
+## Explore the Xooa-Ethereum-Get-Set smart Contract end-points
+
+
 
 1. Go to the **Details** tab, and then click **Explore API's**.
 
@@ -72,7 +67,7 @@ It returns the chaincode name and the version number for it.
 
 > **Congrats!** You have saved data in a blockchain using **Xooa**.
 
-7. To view your transaction as part of the blockchain, go to [https://xooa.com/blockchain](https://xooa.com/blockchain/ledger?utm_source=samplesRepo) or navigate to **Ledger** from your Xooa console.
+7. To view your transaction as part of the blockchain, navigate to **Ledger** from your App Details page.
 
 8. Navigate to **Transactions** tab.
 
