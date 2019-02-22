@@ -45,6 +45,8 @@ If it succeeds in creating the transaction it returns a response with key value 
 
 ## Explore the Xooa-Ethereum-Get-Set smart Contract end-points
 
+
+
 1. Go to the **Details** tab, and then click **Explore API's**.
 
 2. Enter **API Token** in the field in navigation pane.
