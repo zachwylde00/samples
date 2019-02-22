@@ -1,26 +1,54 @@
-# Overview
+# Xooa Get-Set Smart Contract
 
-This repository contains the get-set smart contract.  Deploy the smart contract via the Xooa console, refer to  <https://github.com/Xooa/samples/blob/master/README.md> to get started, deploying **Xooa-get-set** from this repository.
+This page provides an overview to Xooa Get-Set Smart Contract functionalities.
 
-Here, you'll get to know: how to invoke a smart contract, write data to the blockchain and how to retrieve that data.
-
-**Project documentation:** <https://docs.xooa.com>
-___
-
-This app runs on `Hyperledger Fabric`. It is written in `GoLang`.
-
-## Deploy the SmartThings smart contract 
+This smart contract runs on `Hyperledger Fabric` and is written in `GoLang`.
 
 
+## Overview
+
+This smart contract provides 3 functions:
+  
+  * Get
+  * Set
+  * GetVersion
+
+
+#### Get
+
+Get method is used to fetch the value associated with a key passed in the arguments.
+This method expects a single argument as the key whose world state is required.
+If a value is found for the key then it returns the value or else it returns an error message.
+
+
+#### Set
+
+Set method is used to store the key value pair in the ledger.
+This method requires two arguments and takes the first as the key and second as value.
+This method creates a transaction in the blockchain ledger and stores the key value pair.
+If it succeeds in creating the transaction it returns a response with key value pair as payload or else an error response.
+
+
+#### GetVersion
+
+This method is used to get the version of the chaincode that is deployed.
+It returns the chaincode name and the version number for it.
+
+
+
+## Deploy the Get-Set smart contract 
+ 
 1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Get-Set** as the smart contract.
 
-2. Record the **API Token** when it is shown: you will need it to authorize API requests from SmartApp.
+2. Record the **API Token** when it is shown: you will need it to authorize API requests from Dropbox App.
 
    > **Tip:**  to regenerate the API token: 
    >
-   > 1. Go to the **Identities** tab. 
+   > 1. Go to the **Identities** tab in the App. 
    > 2. Next to the ID, select **Actions**.
    > 3. Select **Regenerate API Token**, and then select **Generate**.
+
+
 
 ## Explore the get-set smart Contract end-points
 
@@ -30,9 +58,9 @@ This app runs on `Hyperledger Fabric`. It is written in `GoLang`.
 
 3. Go to **Smart Contract > Invoke Smart Contract Function**.
 
-  	**Invoke** will write to the blockchain. The function **set** will invoke the smart contract.
+  	**Invoke** will write to the blockchain. The function **set** is used to invoke the smart contract.
 
-  	**Query** will read data from the blockchain. The function **get** will query the smart contract.
+  	**Query** will read data from the blockchain. The function **get** is used to query the smart contract.
 
 4. In the **fcn** field, enter `set`.
 
