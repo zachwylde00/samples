@@ -17,48 +17,11 @@ Apps:
     path: /get-set/smartcontract
     language: go
     README: https://github.com/Xooa/samples/blob/master/get-set/README.md
-  Xooa-Microsoft:
-    Name: GetSetDel (multi key-value pairs)
-    Description: Xooa Get Set Delete Smart Contract to store multiple keys in a single call
-    path: /microsoft/smartcontract/
+  Xooa-Marbles:
+    Name: Marbles
+    Description: Xooa Marbles
+    path: /marbles/smartcontract
     language: go
-    README: https://github.com/Xooa/samples/blob/master/microsoft/README.md
-  Xooa-Salesforce:
-    Name: Salesforce Integration
-    Description: Xooa Salesforce Smart Contract
-    path: /salesforce/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/salesfoce/README.md
-  Xooa-SmartThings:
-    Name: SmartThings Integration
-    Description: Xooa SmartThings Smart Contract
-    path: /smartthings/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/smartthings/README.md
-  Xooa-zapier:
-    Name: Zapier Integration
-    Description: Xooa Zapier Smart Contract
-    path: /zapier/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/zapier/README.md
-  Xooa-QuickBooks:
-    Name: QuickBooks Integration
-    Description: Xooa QuickBooks Smart Contract
-    path: /quickbooks/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/quickbooks/README.md
-  Xooa-Google-Forms:
-    Name: Google Forms Integration
-    Description: Xooa Google forms Smart Contract
-    path: /google-forms/SmartContract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/google-forms/README.md
-  Xooa-Dropbox:
-    Name: Xooa Dropbox Integration
-    Description: Xooa Dropbox Smart Contract
-    path: /dropbox/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/dropbox/README.md
   Xooa-Ethereum-Get-Set:
     Name: Ethereum Smart Contract
     Description: Solidity Get Set Smart Contract for Ethereum
