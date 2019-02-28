@@ -22,7 +22,7 @@ Apps:
     Description: Xooa Marbles
     path: /marbles/smartcontract
     language: go
-  Xooa-zapier:
+  Xooa-Zapier:
     Name: Zapier Integration
     Description: Xooa Zapier Smart Contract
     path: /zapier/smartcontract/
