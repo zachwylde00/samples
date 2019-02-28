@@ -1,7 +1,7 @@
 <!--
 * Xooa Google-forms add-on
 *
-* Copyright 2018 Xooa
+* Copyright 2019 Xooa
 *
 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
 * in compliance with the License. You may obtain a copy of the License at:
@@ -13,7 +13,7 @@
 * for the specific language governing permissions and limitations under the License.
 *
 * Author: Arisht Jain
-* Last Modified: 25/09/2018
+* Last Modified: 06/02/2019
 -->
 
 <!DOCTYPE html>
@@ -73,11 +73,6 @@
                     Xooa API Token <sup style="color:red">*</sup>
                 </label>
                 <input type="text" class="width-100" id="api-token" required>
-
-                <label for="function-name">
-                    Function Name <sup style="color:red">*</sup>
-                </label>
-                <input type="text" class="width-100" id="function-name" value="saveNewResponse" required>
             </div>
 
             <div class="block" id="button-bar">
@@ -135,11 +130,10 @@
             $('#status').remove();
 
             var settings = {
-                'apiToken': $('#api-token').val().trim(),
-                'functionName': $('#function-name').val().trim()
+                'apiToken': $('#api-token').val().trim()
             };
 
-            if (!settings.apiToken || !settings.functionName) {
+            if (!settings.apiToken) {
                 showStatus('Enter Xooa API Token', $('#button-bar'));
                 this.disabled = false;
                 return;

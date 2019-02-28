@@ -3,21 +3,17 @@ This page provides a step-by-step tutorial to integrate a Google forms add-on wi
 
 # Overview
 
-This repository contains a Google forms add-on and the blockchain smart contract (chaincode) for that add-on. With these instructions, you can deploy the smart contract via the Xooa console and the Google forms add-on via the Google script editor.
+This repository contains a Google forms add-on. With these instructions, you can deploy the Google forms add-on via the Google script editor.
 
-## Deploy the Google forms smart contract 
+## Get Xooa API token
 
-1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-Google-Forms** as the smart contract.
+1. Log in to Xooa console.
 
-2. Record the **API Token** when it is shown: you will need it to authorize API requests from SmartApp.
+2. Go to **Google Forms > Get Started**.
 
-   > **Tip:**  to regenerate the API token: 
-   >
-   > 1. Go to the **Identities** tab. 
-   > 2. Next to the ID, select **Actions**.
-   > 3. Select **Regenerate API Token**, and then select **Generate**.
+3. Go to **Trying out the Xooa Google forms add-on > Generate Xooa API Token**.
 
-___
+4. Copy and store the API token.
 
 ## Set up the Xooa Google forms add-on
 
@@ -41,11 +37,9 @@ When you've completed this process, you'll have a project with 1 script file and
 
 2. After a few seconds, a **Xooa blockchain logger** sub-menu will appear under the **Add-ons extension** menu. (If you chose a different name for your script, that name appears instead.) Click **Add-ons > Xooa blockchain logger**, and in the resulting dialog click Configure logger.
 
-3. **Xooa API Token** in the sidebar that has popped up on the screen.
+3. Enter **Xooa API Token** in the sidebar that has popped up on the screen.
 
-4. Change the **Function Name** if you've changed it in the smart contract. Otherwise, keep the default name.
+4. Click **Save**.
 
-5. Click **Save**.
-
-6. Your settings are now saved. The form is now configured to log data in **Xooa blockchain**.
+5. Your settings are now saved. The form is now configured to log data in **Xooa blockchain**.
 

@@ -5,25 +5,22 @@ This page provides a step-by-step tutorial to integrate a blockchain SmartApp wi
 
 # Overview
 
-This repository contains an event logger SmartApp and the smart contract (chaincode) for that app. The SmartApp allows you to read and write events from a blockchain ledger. With these instructions, you can provide an immutable ledger for your connected devices. For example, providing a trusted audit of usage history. 
+This repository contains an event logger SmartApp. The SmartApp allows you to read and write events from a blockchain ledger. With these instructions, you can provide an immutable ledger for your connected devices. For example, providing a trusted audit of usage history. 
 
 **To enable the app you need to:**
 
-1. Deploy the SmatThings smart contract in xooa. 
-2. Set up the Event Logger SmartApp and the Event Viewer SmartApp via both the SmartThings IDE and your mobile device (see below).
+Set up the Event Logger SmartApp and the Event Viewer SmartApp via both the SmartThings IDE and your mobile device (see below).
 
-## Deploy the SmartThings smart contract 
+## Get Xooa API token
 
 
-1. Follow the instructions here: https://docs.xooa.com/start.html#deploy-the-smart-contract-app, selecting the **Xooa-SmartThings** as the smart contract.
+1. Log in to Xooa console.
 
-2. Record the **API Token** when it is shown: you will need it to authorize API requests from SmartApp.
+2. Go to **SmartThings > Get Started**.
 
-   > **Tip:**  to regenerate the API token: 
-   >
-   > 1. Go to the **Identities** tab. 
-   > 2. Next to the ID, select **Actions**.
-   > 3. Select **Regenerate API Token**, and then select **Generate**.
+3. Click **Generate Xooa API Token**.
+
+4. Copy and store the API token.
 
 ___
 

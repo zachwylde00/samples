@@ -11,7 +11,7 @@
 /**
  *  Xooa Google-forms add-on
  *
- *  Copyright 2018 Xooa
+ *  Copyright 2019 Xooa
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -23,7 +23,7 @@
  *  for the specific language governing permissions and limitations under the License.
  *  
  *  Author: Arisht Jain
- *  Last Modified: 18/12/2018
+ *  Last Modified: 06/02/2019
  */
 
 /**
@@ -181,7 +181,7 @@ function sendResponse() {
       
     // Call invoke API to log response in Xooa blockchain
     var options = {
-      'method': 'post',
+      'method': 'put',
       'contentType': 'application/json',
       'headers': { 
         "Authorization": "Bearer " + settings.getProperty('apiToken')
@@ -190,7 +190,7 @@ function sendResponse() {
       'muteHttpExceptions': true
     }
     
-    var url = "https://api.xooa.com/api/v1/invoke/" + settings.getProperty('functionName')
+    var url = "https://api.xooa.com/api/v1/states"
     var response = UrlFetchApp.fetch(url, options);
     Logger.log(response.getContentText())
     
