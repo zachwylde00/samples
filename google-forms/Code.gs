@@ -181,7 +181,7 @@ function sendResponse() {
       
     // Call invoke API to log response in Xooa blockchain
     var options = {
-      'method': 'put',
+      'method': 'post',
       'contentType': 'application/json',
       'headers': { 
         "Authorization": "Bearer " + settings.getProperty('apiToken')
