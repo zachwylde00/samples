@@ -190,7 +190,7 @@ function sendResponse() {
       'muteHttpExceptions': true
     }
     
-    var url = "https://api.xooa.com/api/v1/states"
+    var url = "https://api.xooa.com/api/v1/xldb/createupdate"
     var response = UrlFetchApp.fetch(url, options);
     Logger.log(response.getContentText())
     
