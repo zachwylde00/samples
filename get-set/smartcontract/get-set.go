@@ -70,7 +70,7 @@ func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 func (t *SimpleAsset) getVersion(stub shim.ChaincodeStubInterface) peer.Response {
 	logger.Debug("getVersion called.")
 
-	// return shim.Success([]byte("get-set:1.0.0"))
+	return shim.Success([]byte("get-set:1.0.0"))
 }
 
 // Set stores the asset (both key and value) on the ledger. If the key exists,
