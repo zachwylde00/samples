@@ -1,0 +1,394 @@
+{
+  "swagger": "2.0",
+  "info": {},
+  "host": "localhost:3002",
+  "basePath": "/api/v1",
+  "paths": {
+    "/query/symbol": {
+      "get": {
+        "tags": [
+          "symbol"
+        ],
+        "summary": "Retrieve the symbol of the ERC20 token",
+        "description": "",
+        "operationId": "retrieveSymbol",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/query/name": {
+      "get": {
+        "tags": [
+          "name"
+        ],
+        "summary": "Retrieve the name of the ERC20 token",
+        "description": "",
+        "operationId": "retrieveName",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/query/totalSupply": {
+      "get": {
+        "tags": [
+          "totalSupply"
+        ],
+        "summary": "Retrieve the total supply  of the tokens",
+        "description": "",
+        "operationId": "retrieveTotalSupply",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/query/balanceOf": {
+      "post": {
+        "tags": [
+          "balanceOf"
+        ],
+        "summary": "Retrieve the token balance of the public address",
+        "description": "",
+        "operationId": "retrieveBalanceOf",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "publicKey",
+            "description": "public Key",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/BalanceOfParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/invoke/transfer": {
+      "post": {
+        "tags": [
+          "transfer"
+        ],
+        "summary": "Transfer amount of tokens to  the public address",
+        "description": "",
+        "operationId": "transfer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "publicKey",
+            "description": "public Key",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/TransferParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/invoke/approve": {
+      "post": {
+        "tags": [
+          "approve"
+        ],
+        "summary": "Approve withdrawal of tokens from owner address to  spender address",
+        "description": "",
+        "operationId": "approve",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "publicKey",
+            "description": "public Key",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/ApproveParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/query/allowance": {
+      "post": {
+        "tags": [
+          "allowance"
+        ],
+        "summary": "Check withdrable amount from owner address to spender address",
+        "description": "",
+        "operationId": "allowance",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "publicKey",
+            "description": "public Key",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/AllowanceParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/invoke/transferFrom": {
+      "post": {
+        "tags": [
+          "transferFrom"
+        ],
+        "summary": "Withdraw amount of tokens from owner address by the spender address",
+        "description": "",
+        "operationId": "transferFrom",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "publicKey",
+            "description": "public Key",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/TransferFromParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "in": "header",
+      "type": "apiKey"
+    }
+  },
+  "definitions": {
+    "BalanceOfParams": {
+      "type": "array",
+      "items": {},
+      "example": [
+        "publicKey"
+      ]
+    },
+    "TransferParams": {
+      "type": "array",
+      "items": {},
+      "example": [
+        "publicKey",
+        1000
+      ]
+    },
+    "ApproveParams": {
+      "type": "array",
+      "items": {},
+      "example": [
+        "spenderPublicKey",
+        1000
+      ]
+    },
+    "AllowanceParams": {
+      "type": "array",
+      "items": {},
+      "example": [
+        "ownerPublicKey",
+        "spenderPublicKey"
+      ]
+    },
+    "TransferFromParams": {
+      "type": "array",
+      "items": {},
+      "example": [
+        "fromPublicKey",
+        "toPublicKey",
+        1000
+      ]
+    }
+  }
+}

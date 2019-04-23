@@ -31,7 +31,7 @@ Apps:
   Xooa-Erc20:
     Name: ERC20 
     Description: ERC20 sample contract  
-    path: /erc20/
+    path: /erc20/smartcontract/
     language: go
     README: https://github.com/Xooa/samples/blob/master/erc20/README.md
   Xooa-Ethereum-Get-Set:
