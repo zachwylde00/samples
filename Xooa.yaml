@@ -22,12 +22,12 @@ Apps:
     Description: Xooa Marbles
     path: /marbles/smartcontract
     language: go
-  Xooa-Zapier:
-    Name: Zapier Integration
-    Description: Xooa Zapier Smart Contract
-    path: /zapier/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/zapier/README.md
+  # Xooa-Zapier:
+  #   Name: Zapier Integration
+  #   Description: Xooa Zapier Smart Contract
+  #   path: /zapier/smartcontract/
+  #   language: go
+  #   README: https://github.com/Xooa/samples/blob/master/zapier/README.md
   Xooa-Erc20:
     Name: ERC20 
     Description: ERC20 sample contract  

@@ -1,0 +1,142 @@
+{
+	"swagger": "2.0",
+	"info": {},
+	"host": "localhost:3002",
+	"basePath": "/api/v1",
+	"paths": {
+		"/invoke/set": {
+			"post": {
+				"tags": [
+					"set"
+				],
+				"summary": "Set the value of a key",
+				"description": "",
+				"operationId": "set",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "key",
+						"description": "Key",
+						"required": "true",
+						"schema": {
+							"$ref": "#/definitions/SetKeyParams"
+						}
+					},
+					{
+						"in": "body",
+						"name": "value",
+						"description": "Value",
+						"required": "true",
+						"schema": {
+							"$ref": "#/definitions/SetValueParams"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success. Processing complete."
+					},
+					"202": {
+						"description": "Success. Queued for processing."
+					},
+					"400": {
+						"description": "Bad request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				},
+				"security": [
+					{
+						"Bearer": []
+					}
+				]
+			}
+		},
+		"/query/get": {
+			"post": {
+				"tags": [
+					"get"
+				],
+				"summary": "Get the value of a key",
+				"description": "",
+				"operationId": "get",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "Key",
+						"description": "Key",
+						"required": "true",
+						"schema": {
+							"$ref": "#/definitions/GetParams"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success. Processing complete."
+					},
+					"202": {
+						"description": "Success. Queued for processing."
+					},
+					"400": {
+						"description": "Bad request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				},
+				"security": [
+					{
+						"Bearer": []
+					}
+				]
+			}
+		}
+	},
+	"securityDefinitions": {
+		"Bearer": {
+			"name": "Authorization",
+			"in": "header",
+			"type": "apiKey"
+		}
+	},
+	"definitions": {
+		"SetKeyParams": {
+			"type": "string",
+			"example": "key1"
+		},
+		"SetValueParams": {
+			"type": "string",
+			"example": "value1"
+		},
+		"GetParams": {
+			"type": "string",
+			"example": "key1"
+		}
+	}
+}
