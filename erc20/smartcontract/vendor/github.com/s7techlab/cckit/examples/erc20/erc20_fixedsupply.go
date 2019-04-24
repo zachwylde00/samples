@@ -68,7 +68,7 @@ func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 	}
 
 	isInit, err := c.State().Get(IsInitKey);
-	if (isInit) {
+	if (isInit != nil && isInit == true) {
 		return ownerIdentity, nil
 	} else {
 		if err := c.State().Insert(IsInitKey, true); err != nil {
