@@ -18,7 +18,7 @@ import (
 const SymbolKey = `symbol`
 const NameKey = `name`
 const TotalSupplyKey = `totalSupply`
-var isInit bool = false
+const IsInitKey = `isInit`
 
 func NewErc20FixedSupply() *router.Chaincode {
 	r := router.New(`erc20fixedSupply`).Use(p.StrictKnown).
@@ -63,14 +63,18 @@ func NewErc20FixedSupply() *router.Chaincode {
 
 func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 	ownerIdentity, err := owner.SetFromCreator(c)
-	if (isInit) {
-		return ownerIdentity, nil
-	} else {
-		isInit = true
-	}
 	if err != nil {
 		return nil, errors.Wrap(err, `set chaincode owner`)
 	}
+
+	if (Query(IsInitKey, false)) {
+		return ownerIdentity, nil
+	} else {
+		if err := c.State().Insert(IsInitKey, true); err != nil {
+			return nil, err
+		}
+	}
+
 	// save token configuration in state
 	if err := c.State().Insert(SymbolKey, c.ParamString(`symbol`)); err != nil {
 		return nil, err
