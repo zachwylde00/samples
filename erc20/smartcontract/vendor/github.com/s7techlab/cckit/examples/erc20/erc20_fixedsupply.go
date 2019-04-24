@@ -67,28 +67,12 @@ func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 		return nil, errors.Wrap(err, `set chaincode owner`)
 	}
 
-	isInit, err := c.State().Get(IsInitKey);
-	if (isInit != nil && isInit == '1') {
-		return ownerIdentity, nil
-	} else {
-		if err := c.State().Insert(IsInitKey, '1'); err != nil {
-			return nil, err
-		}
-	}
-
 	// save token configuration in state
-	if err := c.State().Insert(SymbolKey, c.ParamString(`symbol`)); err != nil {
-		return nil, err
-	}
+	c.State().Insert(SymbolKey, c.ParamString(`symbol`))
 
-	if err := c.State().Insert(NameKey, c.ParamString(`name`)); err != nil {
-		return nil, err
-	}
+	c.State().Insert(NameKey, c.ParamString(`name`))
 
-	if err := c.State().Insert(TotalSupplyKey, c.ParamInt(`totalSupply`)); err != nil {
-		return nil, err
-	}
-
+	c.State().Insert(TotalSupplyKey, c.ParamInt(`totalSupply`))
 	//get publicKeyString
 	// pKey := ownerIdentity.GetPublicKey()
 	// s := reflect.ValueOf(pKey).Elem()
@@ -109,9 +93,7 @@ func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 	pKey := ownerIdentity.GetID()
 	fmt.Println("pKay: ", pKey)
 	// set token owner initial balance
-	if err := setBalance(c, pKey, c.ParamInt(`totalSupply`)); err != nil {
-		return nil, errors.Wrap(err, `set owner initial balance`)
-	}
+	setBalance(c, pKey, c.ParamInt(`totalSupply`))
 
 	return ownerIdentity, nil
 }
