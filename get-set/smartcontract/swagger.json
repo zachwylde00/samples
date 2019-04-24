@@ -21,20 +21,11 @@
 				"parameters": [
 					{
 						"in": "body",
-						"name": "key",
-						"description": "Key",
+						"name": "args",
+						"description": "Argument(s) to pass to the blockchain Smart Contract app function, such as blockchain transaction payload. Argument(s) will be passed as argument(s) to Smart Contract function.",
 						"required": "true",
 						"schema": {
 							"$ref": "#/definitions/SetKeyParams"
-						}
-					},
-					{
-						"in": "body",
-						"name": "value",
-						"description": "Value",
-						"required": "true",
-						"schema": {
-							"$ref": "#/definitions/SetValueParams"
 						}
 					}
 				],
@@ -82,8 +73,8 @@
 				"parameters": [
 					{
 						"in": "body",
-						"name": "Key",
-						"description": "Key",
+						"name": "args",
+						"description": "Argument(s) to pass to the blockchain Smart Contract app function, argument(s) will be passed as argument(s) to Smart Contract function.",
 						"required": "true",
 						"schema": {
 							"$ref": "#/definitions/GetParams"
@@ -128,15 +119,11 @@
 	"definitions": {
 		"SetKeyParams": {
 			"type": "string",
-			"example": "key1"
-		},
-		"SetValueParams": {
-			"type": "string",
-			"example": "value1"
+			"example": "['a','123']]"
 		},
 		"GetParams": {
 			"type": "string",
-			"example": "key1"
+			"example": "123"
 		}
 	}
 }
