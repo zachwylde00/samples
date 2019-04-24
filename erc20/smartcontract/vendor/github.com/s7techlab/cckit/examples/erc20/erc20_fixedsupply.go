@@ -67,7 +67,7 @@ func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 		return nil, errors.Wrap(err, `set chaincode owner`)
 	}
 
-	if (c.State().get(IsInitKey)) {
+	if (c.State().Get(IsInitKey)) {
 		return ownerIdentity, nil
 	} else {
 		if err := c.State().Insert(IsInitKey, true); err != nil {
