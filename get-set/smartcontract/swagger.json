@@ -119,7 +119,7 @@
 	"definitions": {
 		"SetKeyParams": {
 			"type": "string",
-			"example": "['a','123']]"
+			"example": "[\"a\",\"123\"]"
 		},
 		"GetParams": {
 			"type": "string",
