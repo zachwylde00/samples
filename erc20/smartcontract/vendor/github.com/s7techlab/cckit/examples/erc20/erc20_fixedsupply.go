@@ -18,7 +18,6 @@ import (
 const SymbolKey = `symbol`
 const NameKey = `name`
 const TotalSupplyKey = `totalSupply`
-const IsInitKey = `isInit`
 
 func NewErc20FixedSupply() *router.Chaincode {
 	r := router.New(`erc20fixedSupply`).Use(p.StrictKnown).
@@ -68,11 +67,11 @@ func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 	}
 
 	// save token configuration in state
-	c.State().Insert(SymbolKey, c.ParamString(`symbol`))
+	c.State().Insert(SymbolKey, c.ParamString(SymbolKey))
 
-	c.State().Insert(NameKey, c.ParamString(`name`))
+	c.State().Insert(NameKey, c.ParamString(NameKey))
 
-	c.State().Insert(TotalSupplyKey, c.ParamInt(`totalSupply`))
+	c.State().Insert(TotalSupplyKey, c.ParamInt(TotalSupplyKey))
 	//get publicKeyString
 	// pKey := ownerIdentity.GetPublicKey()
 	// s := reflect.ValueOf(pKey).Elem()
@@ -93,7 +92,7 @@ func invokeInitFixedSupply(c router.Context) (interface{}, error) {
 	pKey := ownerIdentity.GetID()
 	fmt.Println("pKay: ", pKey)
 	// set token owner initial balance
-	setBalance(c, pKey, c.ParamInt(`totalSupply`))
+	setBalance(c, pKey, c.ParamInt(TotalSupplyKey))
 
 	return ownerIdentity, nil
 }
