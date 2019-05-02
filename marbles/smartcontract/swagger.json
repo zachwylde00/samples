@@ -23,7 +23,7 @@
             "in": "body",
             "name": "Init Params",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Name-Color-Size-Owner of marble",
             "schema": {
               "$ref": "#/definitions/InitMarbleRequest"
@@ -76,7 +76,7 @@
             "in": "body",
             "name": "Transfer Params",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Marble Transfer Params",
             "schema": {
               "$ref": "#/definitions/MarbleTransferRequest"
@@ -129,7 +129,7 @@
             "in": "body",
             "name": "Transfer Params",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Transfer by Color Params",
             "schema": {
               "$ref": "#/definitions/MarbleColorTransferRequest"
@@ -182,7 +182,7 @@
             "in": "body",
             "name": "Marble Name",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Marble Name",
             "schema": {
               "$ref": "#/definitions/ReadMarbleRequest"
@@ -235,7 +235,7 @@
             "in": "body",
             "name": "Owner name",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Owner name",
             "schema": {
               "$ref": "#/definitions/QueryOwnerRequest"
@@ -288,7 +288,7 @@
             "in": "body",
             "name": "QueryString",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Selector criteria for querying the marbles.",
             "schema": {
               "$ref": "#/definitions/QueryMarblesRequest"
@@ -341,7 +341,7 @@
             "in": "body",
             "name": "Marble Name",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Marble Name",
             "schema": {
               "$ref": "#/definitions/HistoryMarbleRequest"
@@ -394,7 +394,7 @@
             "in": "body",
             "name": "Range",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Range - startkey endkey",
             "schema": {
               "$ref": "#/definitions/RangeRequest"
@@ -447,7 +447,7 @@
             "in": "body",
             "name": "Marble Name",
             "type": "array",
-            "required": "true",
+            "required": false,
             "description": "Name of marble to be deleted.",
             "schema": {
               "$ref": "#/definitions/DeleteRequest"

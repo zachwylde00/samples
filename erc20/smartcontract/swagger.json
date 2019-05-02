@@ -131,7 +131,7 @@
             "in": "body",
             "name": "publicKey",
             "type": "string",
-            "required": "true",
+            "required": false,
             "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/BalanceOfParams"
@@ -178,7 +178,7 @@
             "in": "body",
             "name": "publicKey",
             "type": "string",
-            "required": "true",
+            "required": false,
             "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/TransferParams"
@@ -225,7 +225,7 @@
             "in": "body",
             "name": "publicKey",
             "type": "string",
-            "required": "true",
+            "required": false,
             "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/ApproveParams"
@@ -272,7 +272,7 @@
             "in": "body",
             "name": "publicKey",
             "type": "string",
-            "required": "true",
+            "required": false,
             "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/AllowanceParams"
@@ -319,7 +319,7 @@
             "in": "body",
             "name": "publicKey",
             "type": "string",
-            "required": "true",
+            "required": false,
             "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/TransferFromParams"
