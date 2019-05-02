@@ -22,12 +22,6 @@ Apps:
     Description: Xooa Marbles
     path: /marbles/smartcontract
     language: go
-  Xooa-Zapier:
-    Name: Zapier Integration
-    Description: Xooa Zapier Smart Contract
-    path: /zapier/smartcontract/
-    language: go
-    README: https://github.com/Xooa/samples/blob/master/zapier/README.md
   Xooa-Ethereum-Get-Set:
     Name: Ethereum Smart Contract
     Description: Solidity Get Set Smart Contract for Ethereum

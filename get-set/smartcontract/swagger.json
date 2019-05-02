@@ -1,0 +1,145 @@
+{
+	"swagger": "2.0",
+	"info": {},
+	"host": "localhost:3002",
+	"basePath": "/api/v1",
+	"paths": {
+		"/invoke/set": {
+			"post": {
+				"summary": "Set the value of a key",
+				"description": "",
+				"tags": [
+					"Get-Set"
+				],
+				"operationId": "set",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "args",
+						"type": "array",
+						"required": false,
+						"description": "Argument(s) to pass to the blockchain Smart Contract app function, such as blockchain transaction payload. Argument(s) will be passed as argument(s) to Smart Contract function.",
+						"schema": {
+							"$ref": "#/definitions/SetParams"
+						}
+					}
+				],
+				"security": [
+					{
+						"Bearer": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success. Processing complete."
+					},
+					"202": {
+						"description": "Success. Queued for processing."
+					},
+					"400": {
+						"description": "Bad request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		},
+		"/query/get": {
+			"post": {
+				"summary": "Get the value of a key",
+				"description": "",
+				"tags": [
+					"Get-Set"
+				],
+				"operationId": "get",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "args",
+						"type": "array",
+						"required": false,
+						"description": "Argument(s) to pass to the blockchain Smart Contract app function, argument(s) will be passed as argument(s) to Smart Contract function.",
+						"schema": {
+							"$ref": "#/definitions/GetParams"
+						}
+					}
+				],
+				"security": [
+					{
+						"Bearer": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success. Processing complete."
+					},
+					"202": {
+						"description": "Success. Queued for processing."
+					},
+					"400": {
+						"description": "Bad request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"SetParams": {
+			"title": "Args",
+			"description": "Array of arguments",
+			"type": "array",
+			"items": {
+				"title": "Arguments",
+				"description": "Key Value pair",
+				"type": "string"
+			},
+			"example": [ "a","123"]
+		},
+		"GetParams": {
+			"title": "Args",
+			"description": "Array of arguments",
+			"type": "array",
+			"items": {
+				"title": "Arguments",
+				"description": "Key Value pair",
+				"type": "string"
+			},
+			"example": ["a"]
+		}
+	},
+	"securityDefinitions": {
+		"Bearer": {
+			"name": "Authorization",
+			"in": "header",
+			"type": "API Key"
+		}
+	}
+}

@@ -1,0 +1,602 @@
+{
+  "swagger": "2.0",
+  "info": {},
+  "host": "localhost:3002",
+  "basePath": "/api/v1",
+  "paths": {
+    "/invoke/initMarble": {
+      "post": {
+        "summary": "Create a new Marble.",
+        "description": "Create a new Marble.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Init_Marble",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Init Params",
+            "type": "array",
+            "required": false,
+            "description": "Name-Color-Size-Owner of marble",
+            "schema": {
+              "$ref": "#/definitions/InitMarbleRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/invoke/transferMarble": {
+      "post": {
+        "summary": "Transfer a marble to a new Owner.",
+        "description": "Transfer a marble to a new Owner.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Transfer_Marble",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Transfer Params",
+            "type": "array",
+            "required": false,
+            "description": "Marble Transfer Params",
+            "schema": {
+              "$ref": "#/definitions/MarbleTransferRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/invoke/transferMarblesBasedOnColor": {
+      "post": {
+        "summary": "Transfer a given color marble to a new owner.",
+        "description": "Transfer a given color marble to a new owner.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Transfer_Color_Marble",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Transfer Params",
+            "type": "array",
+            "required": false,
+            "description": "Transfer by Color Params",
+            "schema": {
+              "$ref": "#/definitions/MarbleColorTransferRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/query/readMarble": {
+      "post": {
+        "summary": "Get the details of a marble.",
+        "description": "Get the details of a marble.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Read_Marble",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Marble Name",
+            "type": "array",
+            "required": false,
+            "description": "Marble Name",
+            "schema": {
+              "$ref": "#/definitions/ReadMarbleRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/query/queryMarblesByOwner": {
+      "post": {
+        "summary": "Query marbles for the owner.",
+        "description": "Query marbles for the owner.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Query_Owner_Marbles",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Owner name",
+            "type": "array",
+            "required": false,
+            "description": "Owner name",
+            "schema": {
+              "$ref": "#/definitions/QueryOwnerRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/query/queryMarbles": {
+      "post": {
+        "summary": "Use a selector criteria to perform a query for marbles.",
+        "description": "Use a selector criteria to perform a query for marbles.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Query_Marbles",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "QueryString",
+            "type": "array",
+            "required": false,
+            "description": "Selector criteria for querying the marbles.",
+            "schema": {
+              "$ref": "#/definitions/QueryMarblesRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/query/getHistoryForMarble": {
+      "post": {
+        "summary": "Get the history of transfers of a marble.",
+        "description": "Get the history of transfers of a marble.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "History",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Marble Name",
+            "type": "array",
+            "required": false,
+            "description": "Marble Name",
+            "schema": {
+              "$ref": "#/definitions/HistoryMarbleRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/query/getMarblesByRange": {
+      "post": {
+        "summary": "Perform a range query based on the start and end keys provided.",
+        "description": "Perform a range query based on the start and end keys provided.",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Get_By_Range",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Range",
+            "type": "array",
+            "required": false,
+            "description": "Range - startkey endkey",
+            "schema": {
+              "$ref": "#/definitions/RangeRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/invoke/delete": {
+      "post": {
+        "summary": "Delete a marble",
+        "description": "Delete a marble",
+        "tags": [
+          "Marble"
+        ],
+        "operationId": "Delete",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Marble Name",
+            "type": "array",
+            "required": false,
+            "description": "Name of marble to be deleted.",
+            "schema": {
+              "$ref": "#/definitions/DeleteRequest"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success. Processing complete."
+          },
+          "202": {
+            "description": "Success. Queued for processing."
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+
+    "InitMarbleRequest": {
+      "title": "Init Marble Request",
+      "description": "Request to Initialize Marble - Name, Color, Size, Owner",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "Name, Color, Size, Owner",
+        "type": "string"
+      },
+      "example": ["name", "color", "2", "owner1"]
+    },
+
+    "MarbleTransferRequest": {
+      "title": "Marble Transfer Request",
+      "description": "Request to Transfer Marble - Name, Owner",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "Name, Owner",
+        "type": "string"
+      },
+      "exapmle": ["Name", "Owner"]
+    },
+
+    "MarbleColorTransferRequest": {
+      "title": "Marble Transfer based on Color",
+      "description": "Transfer Marble based on Color",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "Color, Owner",
+        "type": "string"
+      },
+      "example": ["Color", "Owner"]
+    },
+
+    "ReadMarbleRequest": {
+      "title": "Read Marble Request",
+      "description": "Read Marble Request",
+      "type": "array",
+      "items": {
+        "title": "Marble Name",
+        "description": "Marble Name",
+        "type": "string"
+      },
+      "example": ["Name"]
+    },
+
+    "QueryOwnerRequest": {
+      "title": "Query by Owner Request",
+      "description": "Query by Owner Request",
+      "type": "array",
+      "items": {
+        "title": "Owner Name",
+        "description": "Owner Name",
+        "type": "string"
+      },
+      "example": ["Owner Name"]
+    },
+
+    "QueryMarblesRequest": {
+      "title": "Query Request",
+      "description": "Selector criteria for querying marbles",
+      "type": "array",
+      "items": {
+        "title": "Selector criteria JSON",
+        "description": "Selector criteria JSON for querying",
+        "type": "json"
+      },
+      "example": [{"selector": {"name": "marble name"}}]
+    },
+
+    "HistoryMarbleRequest": {
+      "title": "Marble History Request",
+      "description": "Marble History Request",
+      "type": "array",
+      "items": {
+        "title": "Name",
+        "description": "Marble Name",
+        "type": "string"
+      },
+      "example": ["Name"]
+    },
+
+    "RangeRequest": {
+      "title": "Range Request",
+      "description": "Range Request",
+      "type": "array",
+      "items": {
+        "title": "Keys for Range",
+        "description": "Start and End Key for Range",
+        "type": "string"
+      },
+      "example": ["StartKey", "EndKey"]
+    },
+
+    "DeleteRequest": {
+      "title": "Delete Request",
+      "description": "Delete Request",
+      "type": "array",
+      "items": {
+        "title": "Marble Name",
+        "description": "Marble Name",
+        "type": "string"
+      },
+      "example": ["Name"]
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "in": "header",
+      "type": "API Key"
+    }
+  }
+}
