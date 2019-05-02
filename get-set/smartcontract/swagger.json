@@ -23,7 +23,7 @@
 						"in": "body",
 						"name": "args",
 						"type": "array",
-						"required": "true",
+						"required": "false",
 						"description": "Argument(s) to pass to the blockchain Smart Contract app function, such as blockchain transaction payload. Argument(s) will be passed as argument(s) to Smart Contract function.",
 						"schema": {
 							"$ref": "#/definitions/SetParams"
@@ -76,7 +76,7 @@
 						"in": "body",
 						"name": "args",
 						"type": "array",
-						"required": "true",
+						"required": "false",
 						"description": "Argument(s) to pass to the blockchain Smart Contract app function, argument(s) will be passed as argument(s) to Smart Contract function.",
 						"schema": {
 							"$ref": "#/definitions/GetParams"
