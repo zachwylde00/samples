@@ -1,14 +1,14 @@
 package identity
 
 import (
-	"crypto/x509"
-	"crypto/sha256"
-	"fmt"
-	"encoding/pem"
-	"reflect"
 	"crypto/elliptic"
+	"crypto/sha256"
+	"crypto/x509"
 	"encoding/hex"
+	"encoding/pem"
+	"fmt"
 	"math/big"
+	"reflect"
 
 	"github.com/pkg/errors"
 
@@ -126,13 +126,13 @@ func (ci CertIdentity) GetPublicKey() interface{} {
 
 func (ci CertIdentity) GetPublicKeyString() string {
 	pKey := ci.Cert.PublicKey
-	s:= reflect.ValueOf(pKey).Elem()
-	curveData:= s.Field(0).Interface().(elliptic.Curve)
-	publicKeyBytes:= elliptic.Marshal(curveData , s.FieldByName("X").Interface().(*big.Int), s.FieldByName("Y").Interface().(*big.Int))
+	s := reflect.ValueOf(pKey).Elem()
+	curveData := s.Field(0).Interface().(elliptic.Curve)
+	publicKeyBytes := elliptic.Marshal(curveData, s.FieldByName("X").Interface().(*big.Int), s.FieldByName("Y").Interface().(*big.Int))
 	publicKeyString := sha256.Sum256([]byte(""))
 	fmt.Println("printing public key: ")
 	fmt.Printf("%x", publicKeyString)
-	publicKeyBytesHex:= make([]byte, hex.EncodedLen(len(publicKeyBytes)))
+	publicKeyBytesHex := make([]byte, hex.EncodedLen(len(publicKeyBytes)))
 	hex.Encode(publicKeyBytesHex, publicKeyBytes)
 	return string(publicKeyBytesHex)
 }
