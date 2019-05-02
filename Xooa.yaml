@@ -27,7 +27,7 @@ Apps:
     Description: ERC20 sample contract  
     path: /erc20/smartcontract/
     language: go
-    InitArgs: ["Xooa", "Xooa Org", "1000"],
+    InitArgs: '["Xooa", "Xooa Org", "1000"]'
     README: https://github.com/Xooa/samples/blob/master/erc20/README.md
   Xooa-Ethereum-Get-Set:
     Name: Ethereum Smart Contract
