@@ -6,17 +6,23 @@
   "paths": {
     "/query/symbol": {
       "get": {
-        "tags": [
-          "symbol"
-        ],
         "summary": "Retrieve the symbol of the ERC20 token",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "retrieveSymbol",
         "consumes": [
           "application/json"
         ],
         "produces": [
           "application/json"
+        ],
+        "parameters": [],
+        "security": [
+          {
+            "Bearer": []
+          }
         ],
         "responses": {
           "200": {
@@ -31,21 +37,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/query/name": {
       "get": {
-        "tags": [
-          "name"
-        ],
         "summary": "Retrieve the name of the ERC20 token",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "retrieveName",
         "consumes": [
           "application/json"
@@ -54,6 +55,11 @@
           "application/json"
         ],
         "parameters": [],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -67,21 +73,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/query/totalSupply": {
       "get": {
-        "tags": [
-          "totalSupply"
-        ],
         "summary": "Retrieve the total supply  of the tokens",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "retrieveTotalSupply",
         "consumes": [
           "application/json"
@@ -90,6 +91,11 @@
           "application/json"
         ],
         "parameters": [],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -103,21 +109,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/query/balanceOf": {
       "post": {
-        "tags": [
-          "balanceOf"
-        ],
         "summary": "Retrieve the token balance of the public address",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "retrieveBalanceOf",
         "consumes": [
           "application/json"
@@ -129,11 +130,17 @@
           {
             "in": "body",
             "name": "publicKey",
-            "description": "Public key may be obtained from your app identities tab",
+            "type": "string",
             "required": "true",
+            "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/BalanceOfParams"
             }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
           }
         ],
         "responses": {
@@ -149,21 +156,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/invoke/transfer": {
       "post": {
-        "tags": [
-          "transfer"
-        ],
         "summary": "Transfer amount of tokens to  the public address",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "transfer",
         "consumes": [
           "application/json"
@@ -175,11 +177,17 @@
           {
             "in": "body",
             "name": "publicKey",
-            "description": "Public key may be obtained from your app identities tab",
+            "type": "string",
             "required": "true",
+            "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/TransferParams"
             }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
           }
         ],
         "responses": {
@@ -195,21 +203,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/invoke/approve": {
       "post": {
-        "tags": [
-          "approve"
-        ],
         "summary": "Approve withdrawal of tokens from owner address to  spender address",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "approve",
         "consumes": [
           "application/json"
@@ -221,11 +224,17 @@
           {
             "in": "body",
             "name": "publicKey",
-            "description": "Public key may be obtained from your app identities tab",
+            "type": "string",
             "required": "true",
+            "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/ApproveParams"
             }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
           }
         ],
         "responses": {
@@ -241,21 +250,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/query/allowance": {
       "post": {
-        "tags": [
-          "allowance"
-        ],
         "summary": "Check withdrable amount from owner address to spender address",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "allowance",
         "consumes": [
           "application/json"
@@ -267,11 +271,17 @@
           {
             "in": "body",
             "name": "publicKey",
-            "description": "Public key may be obtained from your app identities tab",
+            "type": "string",
             "required": "true",
+            "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/AllowanceParams"
             }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
           }
         ],
         "responses": {
@@ -287,21 +297,16 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/invoke/transferFrom": {
       "post": {
-        "tags": [
-          "transferFrom"
-        ],
         "summary": "Withdraw amount of tokens from owner address by the spender address",
         "description": "",
+        "tags": [
+          "ERC 20"
+        ],
         "operationId": "transferFrom",
         "consumes": [
           "application/json"
@@ -313,11 +318,17 @@
           {
             "in": "body",
             "name": "publicKey",
-            "description": "Public key may be obtained from your app identities tab",
+            "type": "string",
             "required": "true",
+            "description": "Public key may be obtained from your app identities tab",
             "schema": {
               "$ref": "#/definitions/TransferFromParams"
             }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
           }
         ],
         "responses": {
@@ -333,13 +344,80 @@
           "500": {
             "description": "Internal server error"
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
+    }
+  },
+  "definitions": {
+    "BalanceOfParams": {
+      "title": "Balance Of Params",
+      "description": "Balance Params",
+      "type": "array",
+      "items": {
+        "title": "Public Key",
+        "description": "Public Key",
+        "type": "string"
+      },
+      "example": [
+        "publicKey"
+      ]
+    },
+    "TransferParams": {
+      "title": "Transfer Params",
+      "description": "Transfer Params",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "",
+        "type": "string"
+      },
+      "example": [
+        "publicKey",
+        1000
+      ]
+    },
+    "ApproveParams": {
+      "title": "Approve Params",
+      "description": "Approve Params",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "",
+        "type": "string"
+      },
+      "example": [
+        "spenderPublicKey",
+        1000
+      ]
+    },
+    "AllowanceParams": {
+      "title": "Allowance Params",
+      "description": "Allowance Params",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "",
+        "type": "string"
+      },
+      "example": [
+        "ownerPublicKey",
+        "spenderPublicKey"
+      ]
+    },
+    "TransferFromParams": {
+      "title": "Transfer From Params",
+      "description": "Transfer From Params",
+      "type": "array",
+      "items": {
+        "title": "Params",
+        "description": "",
+        "type": "string"
+      },
+      "example": [
+        "fromPublicKey",
+        "toPublicKey",
+        1000
+      ]
     }
   },
   "securityDefinitions": {
@@ -347,48 +425,6 @@
       "name": "Authorization",
       "in": "header",
       "type": "apiKey"
-    }
-  },
-  "definitions": {
-    "BalanceOfParams": {
-      "type": "array",
-      "items": {},
-      "example": [
-        "publicKey"
-      ]
-    },
-    "TransferParams": {
-      "type": "array",
-      "items": {},
-      "example": [
-        "publicKey",
-        1000
-      ]
-    },
-    "ApproveParams": {
-      "type": "array",
-      "items": {},
-      "example": [
-        "spenderPublicKey",
-        1000
-      ]
-    },
-    "AllowanceParams": {
-      "type": "array",
-      "items": {},
-      "example": [
-        "ownerPublicKey",
-        "spenderPublicKey"
-      ]
-    },
-    "TransferFromParams": {
-      "type": "array",
-      "items": {},
-      "example": [
-        "fromPublicKey",
-        "toPublicKey",
-        1000
-      ]
     }
   }
 }

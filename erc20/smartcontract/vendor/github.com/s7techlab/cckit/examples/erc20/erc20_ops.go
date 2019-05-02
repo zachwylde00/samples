@@ -3,6 +3,7 @@ package erc20
 import (
 	"fmt"
 
+	"github.com/hyperledger/fabric/core/chaincode/lib/cid"
 	"github.com/pkg/errors"
 	"github.com/s7techlab/cckit/identity"
 	r "github.com/s7techlab/cckit/router"
@@ -59,20 +60,23 @@ func invokeTransfer(c r.Context) (interface{}, error) {
 	amount := c.ParamInt(`amount`)
 
 	// get information about tx creator
-	invoker, err := identity.FromStub(c.Stub())
-	if err != nil {
-		return nil, err
+	//invoker, err := identity.FromStub(c.Stub())
+
+	pKey, keyErr := cid.GetID(c.Stub())
+
+	if keyErr != nil {
+		return nil, keyErr
 	}
 
-	fmt.Println("Invoker public key: ", invoker.GetID())
+	fmt.Println("Invoker public key: ", pKey)
 
 	// Disallow to transfer token to same account
-	if invoker.GetID() == toPublicKey {
+	if pKey == toPublicKey {
 		return nil, ErrForbiddenToTransferToSameAccount
 	}
 
 	// get information about invoker balance from state
-	invokerBalance, err := getBalance(c, invoker.GetID())
+	invokerBalance, err := getBalance(c, pKey)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +93,7 @@ func invokeTransfer(c r.Context) (interface{}, error) {
 	}
 
 	// Update payer and recipient balance
-	if err = setBalance(c, invoker.GetID(), invokerBalance-amount); err != nil {
+	if err = setBalance(c, pKey, invokerBalance-amount); err != nil {
 		return nil, err
 	}
 
@@ -120,18 +124,19 @@ func invokeApprove(c r.Context) (interface{}, error) {
 	spenderPublicKey := c.ParamString(`spenderPublicKey`)
 	amount := c.ParamInt(`amount`)
 
-	invoker, err := identity.FromStub(c.Stub())
-	if err != nil {
+	pKey, keyErr := cid.GetID(c.Stub())
+
+	if keyErr != nil {
+		return nil, keyErr
+	}
+
+	if err := setAllowance(c, pKey, spenderPublicKey, amount); err != nil {
 		return nil, err
 	}
 
-	if err = setAllowance(c, invoker.GetID(), spenderPublicKey, amount); err != nil {
-		return nil, err
-	}
-
-	if err = c.SetEvent(`approve`, &Approve{
+	if err := c.SetEvent(`approve`, &Approve{
 		From: identity.PublicKeyID{
-			PublicKey: invoker.GetID()},
+			PublicKey: pKey},
 		Spender: identity.PublicKeyID{
 			PublicKey: spenderPublicKey},
 		Amount: amount,
@@ -148,13 +153,14 @@ func invokeTransferFrom(c r.Context) (interface{}, error) {
 	toPublicKey := c.ParamString(`toPublicKey`)
 	amount := c.ParamInt(`amount`)
 
-	invoker, err := identity.FromStub(c.Stub())
-	if err != nil {
-		return nil, err
+	pKey, keyErr := cid.GetID(c.Stub())
+
+	if keyErr != nil {
+		return nil, keyErr
 	}
 
 	// check method invoker has allowances
-	allowance, err := getAllowance(c, fromPublicKey, invoker.GetID())
+	allowance, err := getAllowance(c, fromPublicKey, pKey)
 
 	if err != nil {
 		return nil, err
@@ -184,7 +190,7 @@ func invokeTransferFrom(c r.Context) (interface{}, error) {
 	if err = setBalance(c, toPublicKey, recipientBalance+amount); err != nil {
 		return nil, err
 	}
-	if err = setAllowance(c, fromPublicKey, invoker.GetID(), allowance-amount); err != nil {
+	if err = setAllowance(c, fromPublicKey, pKey, allowance-amount); err != nil {
 		return nil, err
 	}
 
