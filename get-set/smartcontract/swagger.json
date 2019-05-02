@@ -139,7 +139,7 @@
 		"Bearer": {
 			"name": "Authorization",
 			"in": "header",
-			"type": "apiKey"
+			"type": "API Key"
 		}
 	}
 }
