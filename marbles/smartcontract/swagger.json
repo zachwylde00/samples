@@ -553,7 +553,7 @@
         "description": "Selector criteria JSON for querying",
         "type": "json"
       },
-      "example": ["{\"selector\": {\"name\": \"marble name\"}, \"fields\": {\"name\", \"color\", \"owner\"}"]
+      "example": [{"selector": {"name": "marble name"}}]
     },
 
     "HistoryMarbleRequest": {
