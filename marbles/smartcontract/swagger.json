@@ -596,7 +596,7 @@
     "Bearer": {
       "name": "Authorization",
       "in": "header",
-      "type": "API Key"
+      "type": "apiKey"
     }
   }
 }
