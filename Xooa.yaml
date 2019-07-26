@@ -7,7 +7,7 @@
 #     Name :               -> Default name of the smart contract App after installation in Xooa Platform [Optional Paramater]
 #     Description :        -> Default description of the App in Xooa Platform [Optional Parameter]
 #     path:                -> Path to the smart contract directory relative to Repo root
-#     language:            -> Language of smart contract source code. Options are node and go
+#     language:            -> Language of smart contract source code. Options are node, java and go
 #     README:              -> Path to the documentation of the smart contract App [Optional Parameter]
 
 Apps:
